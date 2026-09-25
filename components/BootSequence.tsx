@@ -49,7 +49,7 @@ export default function BootSequence({ onComplete }: { onComplete: () => void })
       {show && (
         <motion.div
           key="boot"
-          className="fixed inset-0 z-50 flex items-center justify-center bg-[#0a0a0a]"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-[#141414]"
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.4, ease: "easeInOut" }}

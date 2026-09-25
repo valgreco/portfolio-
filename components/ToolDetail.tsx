@@ -36,7 +36,7 @@ export default function ToolDetail({
   stat,
 }: ToolDetailProps) {
   return (
-    <main className="min-h-screen flex flex-col items-center px-6 pt-28 pb-24" style={{ background: "#0a0a0a" }}>
+    <main className="min-h-screen flex flex-col items-center px-6 pt-28 pb-24" style={{ background: "#141414" }}>
       <div className="w-full max-w-3xl">
         <Reveal>
           <p className="text-xs tracking-widest text-neutral-600 uppercase mb-3">{eyebrow}</p>

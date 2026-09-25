@@ -9,7 +9,7 @@ export default function WorkPage() {
   const [selectedCity, setSelectedCity] = useState("Madrid");
 
   return (
-    <main className="min-h-screen flex flex-col items-center px-6 pt-28 pb-12" style={{ background: "#0a0a0a" }}>
+    <main className="min-h-screen flex flex-col items-center px-6 pt-28 pb-12" style={{ background: "#141414" }}>
       <div className="w-full max-w-6xl">
         <p className="text-xs tracking-widest text-neutral-600 uppercase mb-3">See the work</p>
         <h1

@@ -112,14 +112,14 @@ export default function ValerIAPage() {
   }
 
   return (
-    <main className="min-h-screen flex flex-col items-center px-4 pt-28 pb-12" style={{ background: "#0a0a0a" }}>
+    <main className="min-h-screen flex flex-col items-center px-4 pt-28 pb-12" style={{ background: "#141414" }}>
       <div className="w-full max-w-[700px] flex flex-col flex-1">
 
         {/* Portrait */}
         <div className="flex justify-center mb-6 overflow-hidden">
           <div className="relative scale-[0.72] sm:scale-100 origin-center">
             <ParticlePortrait />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#141414] via-transparent to-transparent pointer-events-none" />
           </div>
         </div>
 
@@ -221,7 +221,7 @@ export default function ValerIAPage() {
           {/* Input */}
           <div
             className="flex items-center gap-3 border border-neutral-800 rounded-2xl px-4 py-3"
-            style={{ background: "#111" }}
+            style={{ background: "#1c1c1c" }}
           >
             <input
               className="flex-1 bg-transparent text-sm text-[#f5f5f5] placeholder-neutral-600 outline-none"

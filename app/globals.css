@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0a0a0a;
+  --background: #141414;
   --foreground: #f5f5f5;
   --foreground-emphasis: #ffffff;
 }
@@ -46,8 +46,8 @@ body {
   font-family: var(--font-geist-sans), sans-serif;
   /* subtle grid background */
   background-image:
-    linear-gradient(to right, #151515 1px, transparent 1px),
-    linear-gradient(to bottom, #151515 1px, transparent 1px);
+    linear-gradient(to right, #242424 1px, transparent 1px),
+    linear-gradient(to bottom, #242424 1px, transparent 1px);
   background-size: 40px 40px;
 }
 

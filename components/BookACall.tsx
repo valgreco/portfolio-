@@ -104,7 +104,7 @@ export default function BookACall() {
         Book a call.
       </h2>
 
-      <div className="rounded-3xl bg-[#0f0f0f] border border-white/5 p-8 max-w-xl">
+      <div className="rounded-3xl bg-[#1c1c1c] border border-white/5 p-8 max-w-xl">
 
         {/* Envelope + live draft */}
         <div className="flex items-start gap-5 mb-8">

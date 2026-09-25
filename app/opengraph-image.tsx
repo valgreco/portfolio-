@@ -15,7 +15,7 @@ export default function OGImage() {
           flexDirection: "column",
           justifyContent: "center",
           padding: "80px",
-          background: "#0a0a0a",
+          background: "#141414",
           color: "#f5f5f5",
           fontFamily: "Georgia, serif",
         }}
