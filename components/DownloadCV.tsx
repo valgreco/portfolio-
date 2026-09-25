@@ -42,16 +42,13 @@ export default function DownloadCV() {
     "w-full bg-transparent border-b border-neutral-800 py-3 text-sm text-[#f5f5f5] placeholder-neutral-600 outline-none focus:border-white transition-colors duration-200";
 
   return (
-    <div className="w-full">
-      <p className="text-xs tracking-widest text-neutral-600 uppercase mb-3">Résumé</p>
-      <h2
-        className="text-3xl md:text-4xl text-white mb-8 leading-tight"
-        style={{ fontFamily: "var(--font-instrument-serif)", fontStyle: "italic" }}
-      >
-        Download the CV.
-      </h2>
-
-      <div className="rounded-3xl bg-[#1c1c1c] border border-white/5 p-8">
+    <div className="rounded-3xl bg-[#1c1c1c] border border-white/5 p-8 h-full flex flex-col">
+        <h3
+          className="text-2xl text-white mb-6"
+          style={{ fontFamily: "var(--font-instrument-serif)", fontStyle: "italic" }}
+        >
+          Download the CV
+        </h3>
         {done ? (
           <motion.p
             initial={{ opacity: 0, y: 8 }}
@@ -62,7 +59,7 @@ export default function DownloadCV() {
             &gt; Download started. Thanks for stopping by!
           </motion.p>
         ) : (
-          <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+          <form onSubmit={handleSubmit} className="flex flex-col gap-6 flex-1">
             <p className="text-sm text-neutral-500">
               A couple of details and the PDF is yours.
             </p>
@@ -94,14 +91,13 @@ export default function DownloadCV() {
             <button
               type="submit"
               disabled={loading}
-              className="group self-start text-sm text-[#f5f5f5]/70 hover:text-white transition-colors duration-200 mt-2 disabled:opacity-40"
+              className="group self-start text-sm text-[#f5f5f5]/70 hover:text-white transition-colors duration-200 mt-auto pt-2 disabled:opacity-40"
             >
               {loading ? "Preparing..." : "Download CV"}{" "}
               <span className="inline-block transition-transform duration-200 group-hover:translate-x-1">↓</span>
             </button>
           </form>
         )}
-      </div>
     </div>
   );
 }

@@ -95,16 +95,13 @@ export default function BookACall() {
   const inputClass = "w-full bg-transparent border-b border-neutral-800 py-3 text-sm text-[#f5f5f5] placeholder-neutral-600 outline-none focus:border-white transition-colors duration-200";
 
   return (
-    <div className="w-full">
-      <p className="text-xs tracking-widest text-neutral-600 uppercase mb-3">Book a call</p>
-      <h2
-        className="text-3xl md:text-4xl text-white mb-8 leading-tight"
-        style={{ fontFamily: "var(--font-instrument-serif)", fontStyle: "italic" }}
-      >
-        Book a call.
-      </h2>
-
-      <div className="rounded-3xl bg-[#1c1c1c] border border-white/5 p-8">
+    <div className="rounded-3xl bg-[#1c1c1c] border border-white/5 p-8 h-full flex flex-col">
+        <h3
+          className="text-2xl text-white mb-6"
+          style={{ fontFamily: "var(--font-instrument-serif)", fontStyle: "italic" }}
+        >
+          Book a call
+        </h3>
 
         {/* Envelope + live draft */}
         <div className="flex items-start gap-5 mb-8">
@@ -193,7 +190,6 @@ export default function BookACall() {
             </button>
           </form>
         )}
-      </div>
     </div>
   );
 }

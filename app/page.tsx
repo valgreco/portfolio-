@@ -20,7 +20,14 @@ export default function Home() {
       <Reveal><BeyondTheCV /></Reveal>
       <Reveal>
         <section className="w-full max-w-6xl mx-auto px-6 py-24">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+          <p className="text-xs tracking-widest text-neutral-600 uppercase mb-3">Contact</p>
+          <h2
+            className="text-4xl md:text-5xl text-white mb-12 leading-tight"
+            style={{ fontFamily: "var(--font-instrument-serif)", fontStyle: "italic" }}
+          >
+            Two ways to reach me.
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
             <BookACall />
             <DownloadCV />
           </div>
