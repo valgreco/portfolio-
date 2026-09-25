@@ -2,7 +2,7 @@
 
 export default function Footer() {
   return (
-    <footer className="w-full max-w-6xl mx-auto px-6 py-16 border-t border-white/10">
+    <footer className="w-full max-w-6xl mx-auto px-6 pt-8 pb-16">
       <p
         className="text-3xl text-white mb-3"
         style={{ fontFamily: "var(--font-instrument-serif)", fontStyle: "italic" }}
