@@ -4,6 +4,8 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import WorldMap from "@/components/WorldMap";
 import WorkCases from "@/components/WorkCases";
+import Recognition from "@/components/Recognition";
+import Reveal from "@/components/Reveal";
 
 export default function WorkPage() {
   const [selectedCity, setSelectedCity] = useState("Madrid");
@@ -38,6 +40,13 @@ export default function WorkPage() {
             </motion.div>
           )}
         </AnimatePresence>
+
+        {/* Recognition: closes the journey, always visible */}
+        <Reveal>
+          <div className="mt-32 border-t border-white/10 pt-16">
+            <Recognition />
+          </div>
+        </Reveal>
       </div>
     </main>
   );

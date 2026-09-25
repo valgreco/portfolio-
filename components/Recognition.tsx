@@ -20,7 +20,7 @@ const ITEMS = [
 
 export default function Recognition() {
   return (
-    <section className="w-full max-w-6xl mx-auto px-6 py-24">
+    <div className="w-full">
       <p className="text-xs tracking-widest text-neutral-600 uppercase mb-3">Recognition</p>
       <h2
         className="text-4xl md:text-5xl text-white mb-12 leading-tight"
@@ -47,6 +47,6 @@ export default function Recognition() {
           </div>
         ))}
       </div>
-    </section>
+    </div>
   );
 }
