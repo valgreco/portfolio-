@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import createGlobe, { type COBEOptions } from "cobe";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 
 type Place = {
   city: string;
@@ -96,6 +96,7 @@ function focusFor(loc: [number, number]) {
 
 export default function WorldMap({ onSelectCity }: { onSelectCity?: (city: string) => void }) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const reduced = useReducedMotion();
   const [selected, setSelected] = useState<number | null>(0);
 
   // animation state shared with the render loop via refs
@@ -182,6 +183,21 @@ export default function WorldMap({ onSelectCity }: { onSelectCity?: (city: strin
 
       {/* Location list + detail */}
       <div className="order-2">
+        {/* Hook: cue that the cities are interactive */}
+        <div className="flex items-center gap-2 mb-3">
+          <motion.span
+            className="w-1.5 h-1.5 rounded-full bg-white/60"
+            animate={reduced ? {} : { opacity: [0.3, 1, 0.3] }}
+            transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
+          />
+          <span
+            className="text-[11px] tracking-widest text-neutral-500 uppercase"
+            style={{ fontFamily: "var(--font-geist-mono)" }}
+          >
+            Tap a city to explore
+          </span>
+        </div>
+
         <div className="flex flex-wrap gap-2 mb-6">
           {PLACES.map((p, i) => (
             <button
