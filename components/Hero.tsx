@@ -85,7 +85,7 @@ export default function Hero({ visible }: { visible: boolean }) {
             Talk to ValerIA{" "}
             <span className="inline-block transition-transform duration-200 group-hover:translate-x-1">→</span>
           </Link>
-          <Link href="/#work" className="group text-sm text-[#f5f5f5]/70 hover:text-white transition-colors duration-200">
+          <Link href="/work" className="group text-sm text-[#f5f5f5]/70 hover:text-white transition-colors duration-200">
             See the work{" "}
             <span className="inline-block transition-transform duration-200 group-hover:translate-x-1">→</span>
           </Link>

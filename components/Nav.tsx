@@ -17,8 +17,8 @@ export default function Nav() {
 
       <div className="flex items-center gap-6 text-xs tracking-wide text-white/70">
         <Link
-          href="/#work"
-          className="hover:text-white transition-colors duration-200"
+          href="/work"
+          className={`hover:text-white transition-colors duration-200 ${pathname === "/work" ? "text-white" : ""}`}
         >
           Work
         </Link>
