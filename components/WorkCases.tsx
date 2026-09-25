@@ -64,9 +64,9 @@ export default function WorkCases() {
           Deeds, not words.
         </h2>
         <p className="max-w-2xl text-sm text-neutral-400 leading-7 mt-6">
-          The map covers six countries. This is the one I&apos;m living now: two years owning payments,
-          onboarding and compliance as the first PM at STAMP, a European fintech. Each of these started
-          as a problem worth framing before it was a thing to build.
+          This is the work I&apos;m living now: two years owning payments, onboarding and compliance as
+          the first PM at STAMP, a European fintech. Each of these started as a problem worth framing
+          before it was a thing to build.
         </p>
       </Reveal>
 

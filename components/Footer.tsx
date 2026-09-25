@@ -10,7 +10,7 @@ export default function Footer() {
         Let&apos;s talk.
       </p>
       <p className="text-sm text-neutral-500 mb-6">
-        Lived in six countries. Currently in Madrid.
+        Product manager based in Madrid.
       </p>
 
       <div className="flex items-center gap-6 text-sm">

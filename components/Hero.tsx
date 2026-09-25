@@ -76,7 +76,7 @@ export default function Hero({ visible }: { visible: boolean }) {
           className="max-w-[600px] text-base leading-7 text-[#f5f5f5]/50 mt-5"
         >
           Product manager with a focus on discovery and zero-to-one delivery.
-          Born in Italy, six countries later, now in Madrid.
+          Italian, based in Madrid.
         </motion.p>
 
         {/* CTAs */}
