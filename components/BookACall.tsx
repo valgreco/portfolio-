@@ -95,16 +95,16 @@ export default function BookACall() {
   const inputClass = "w-full bg-transparent border-b border-neutral-800 py-3 text-sm text-[#f5f5f5] placeholder-neutral-600 outline-none focus:border-white transition-colors duration-200";
 
   return (
-    <section className="w-full max-w-6xl mx-auto px-6 py-24">
-      <p className="text-xs tracking-widest text-neutral-600 uppercase mb-3">Contact</p>
+    <div className="w-full">
+      <p className="text-xs tracking-widest text-neutral-600 uppercase mb-3">Book a call</p>
       <h2
-        className="text-4xl md:text-5xl text-white mb-12 leading-tight"
+        className="text-3xl md:text-4xl text-white mb-8 leading-tight"
         style={{ fontFamily: "var(--font-instrument-serif)", fontStyle: "italic" }}
       >
         Book a call.
       </h2>
 
-      <div className="rounded-3xl bg-[#1c1c1c] border border-white/5 p-8 max-w-xl">
+      <div className="rounded-3xl bg-[#1c1c1c] border border-white/5 p-8">
 
         {/* Envelope + live draft */}
         <div className="flex items-start gap-5 mb-8">
@@ -117,7 +117,7 @@ export default function BookACall() {
           <div className="flex-1 min-w-0 text-xs leading-[1.8] text-neutral-500 break-words" style={{ fontFamily: "var(--font-geist-mono)" }}>
             <div className="flex gap-2">
               <span className="text-neutral-700 w-14 shrink-0">To:</span>
-              <span className="text-neutral-400 min-w-0 break-all">valeria.greco29@gmail.com</span>
+              <span className="text-neutral-400 min-w-0 break-all">Valeria Greco</span>
             </div>
             <div className="flex gap-2">
               <span className="text-neutral-700 w-14 shrink-0">Subject:</span>
@@ -194,6 +194,6 @@ export default function BookACall() {
           </form>
         )}
       </div>
-    </section>
+    </div>
   );
 }

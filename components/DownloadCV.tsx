@@ -42,16 +42,16 @@ export default function DownloadCV() {
     "w-full bg-transparent border-b border-neutral-800 py-3 text-sm text-[#f5f5f5] placeholder-neutral-600 outline-none focus:border-white transition-colors duration-200";
 
   return (
-    <section className="w-full max-w-6xl mx-auto px-6 py-24">
+    <div className="w-full">
       <p className="text-xs tracking-widest text-neutral-600 uppercase mb-3">Résumé</p>
       <h2
-        className="text-4xl md:text-5xl text-white mb-12 leading-tight"
+        className="text-3xl md:text-4xl text-white mb-8 leading-tight"
         style={{ fontFamily: "var(--font-instrument-serif)", fontStyle: "italic" }}
       >
         Download the CV.
       </h2>
 
-      <div className="rounded-3xl bg-[#1c1c1c] border border-white/5 p-8 max-w-xl">
+      <div className="rounded-3xl bg-[#1c1c1c] border border-white/5 p-8">
         {done ? (
           <motion.p
             initial={{ opacity: 0, y: 8 }}
@@ -102,6 +102,6 @@ export default function DownloadCV() {
           </form>
         )}
       </div>
-    </section>
+    </div>
   );
 }

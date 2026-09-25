@@ -18,8 +18,14 @@ export default function Home() {
       <Hero visible={heroVisible} />
       <Reveal><BuildingWithAI /></Reveal>
       <Reveal><BeyondTheCV /></Reveal>
-      <Reveal><BookACall /></Reveal>
-      <Reveal><DownloadCV /></Reveal>
+      <Reveal>
+        <section className="w-full max-w-6xl mx-auto px-6 py-24">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+            <BookACall />
+            <DownloadCV />
+          </div>
+        </section>
+      </Reveal>
     </main>
   );
 }
