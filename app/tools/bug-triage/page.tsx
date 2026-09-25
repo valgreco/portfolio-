@@ -1,7 +1,7 @@
 import ToolDetail from "@/components/ToolDetail";
 
 export const metadata = {
-  title: "Bug Triage Agent — Valeria Greco",
+  title: "Bug Triage Agent, Valeria Greco",
 };
 
 export default function BugTriagePage() {

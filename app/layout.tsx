@@ -24,11 +24,11 @@ const instrumentSerif = Instrument_Serif({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://leragreco.com"),
-  title: "Valeria Greco — Product Manager",
+  title: "Valeria Greco, Product Manager",
   description:
     "Product Manager building fintech for travellers across Europe. Italian, based in Madrid. Building with AI.",
   openGraph: {
-    title: "Valeria Greco — Product Manager",
+    title: "Valeria Greco, Product Manager",
     description:
       "Product Manager building fintech for travellers across Europe. Italian, based in Madrid. Building with AI.",
     type: "website",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Valeria Greco — Product Manager",
+    title: "Valeria Greco, Product Manager",
     description:
       "Product Manager building fintech for travellers across Europe. Building with AI.",
   },

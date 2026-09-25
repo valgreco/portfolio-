@@ -10,7 +10,7 @@ type Message = { role: "user" | "assistant"; content: string };
 const INITIAL: Message = {
   role: "assistant",
   content:
-    "Hi, I'm ValerIA — Valeria's AI agent. I can tell you about her work, how she thinks, or anything else you're curious about. What would you like to know?",
+    "Hi, I'm ValerIA, Valeria's AI agent. I can tell you about her work, how she thinks, or anything else you're curious about. What would you like to know?",
 };
 
 const BOOT_LINES = [

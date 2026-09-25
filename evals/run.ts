@@ -51,8 +51,8 @@ async function askValerIA(question: string): Promise<string> {
   return block.text ?? "";
 }
 
-// Independent judge. Only sees the question, the answer, and the criterion —
-// never the corpus — so it can't be lenient about invented facts.
+// Independent judge. Only sees the question, the answer, and the criterion,
+// never the corpus, so it can't be lenient about invented facts.
 async function judge(
   c: EvalCase,
   answer: string

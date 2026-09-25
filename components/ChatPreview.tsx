@@ -6,11 +6,11 @@ import { useReducedMotion } from "framer-motion";
 const CONVOS = [
   {
     q: "What's Valeria's background?",
-    a: "She came from marketing and consulting — Amazon, Bosch, Wayra — then moved into product two years ago. First PM hire at a European fintech.",
+    a: "She came from marketing and consulting (Amazon, Bosch, Wayra), then moved into product two years ago. First PM hire at a European fintech.",
   },
   {
     q: "What has she built with AI?",
-    a: "Five tools in five days: an MCP server, a bug triage agent, a discovery tool, a marketing framework — and me.",
+    a: "Five tools in five days: an MCP server, a bug triage agent, a discovery tool, a marketing framework, and me.",
   },
   {
     q: "Where is she based?",

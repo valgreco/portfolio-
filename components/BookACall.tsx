@@ -8,7 +8,7 @@ const EASE = [0.16, 1, 0.3, 1] as const;
 function LetterToPlane({ active, launched }: { active: boolean; launched: boolean }) {
   return (
     <svg viewBox="0 0 72 56" width="72" height="56" fill="none" xmlns="http://www.w3.org/2000/svg">
-      {/* Dotted flight trail — appears on launch */}
+      {/* Dotted flight trail: appears on launch */}
       <motion.path
         d="M4 50 Q28 46 48 18"
         stroke="white"
@@ -22,7 +22,7 @@ function LetterToPlane({ active, launched }: { active: boolean; launched: boolea
         transition={{ duration: 0.7, ease: EASE }}
       />
 
-      {/* ENVELOPE — visible until launch */}
+      {/* ENVELOPE: visible until launch */}
       <motion.g
         animate={
           launched
@@ -42,7 +42,7 @@ function LetterToPlane({ active, launched }: { active: boolean; launched: boolea
         <path d="M8 47 L36 31 L64 47" stroke="white" strokeOpacity="0.12" strokeWidth="1" fill="none" />
       </motion.g>
 
-      {/* PAPER PLANE — appears and flies off on launch */}
+      {/* PAPER PLANE: appears and flies off on launch */}
       <motion.g
         initial={{ opacity: 0 }}
         animate={
@@ -71,7 +71,7 @@ export default function BookACall() {
   const isOpen = everFocused || form.name.length > 0 || form.company.length > 0 || form.reason.length > 0;
 
   const subjectLine = form.name || form.company
-    ? `Call request from ${form.name || "..."}${form.company ? ` — ${form.company}` : ""}`
+    ? `Call request from ${form.name || "..."}${form.company ? `, ${form.company}` : ""}`
     : "Call request from ___";
 
   const bodyLine = form.reason
@@ -80,7 +80,7 @@ export default function BookACall() {
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    const subject = encodeURIComponent(`Call request from ${form.name} — ${form.company}`);
+    const subject = encodeURIComponent(`Call request from ${form.name}, ${form.company}`);
     const body = encodeURIComponent(
       `Hi Valeria,\n\nI'd love to schedule a call with you.\n\nName: ${form.name}\nCompany: ${form.company}\nReason: ${form.reason}\n\nLooking forward to connecting!`
     );
@@ -152,7 +152,7 @@ export default function BookACall() {
             className="text-sm text-neutral-400"
             style={{ fontFamily: "var(--font-geist-mono)" }}
           >
-            &gt; Email client opened — hit send when you&apos;re ready. Valeria is looking forward to it!
+            &gt; Email client opened. Hit send when you&apos;re ready. Valeria is looking forward to it!
           </motion.p>
         ) : (
           <form onSubmit={handleSubmit} className="flex flex-col gap-6">

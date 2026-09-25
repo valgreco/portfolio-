@@ -5,7 +5,7 @@ import Reveal from "./Reveal";
 const STATS = [
   { value: "31%", label: "fewer payment disputes" },
   { value: "12%", label: "increase in invoice volume" },
-  { value: "18%", label: "uplift in merchant portal sessions" },
+  { value: "~70%", label: "faster merchant onboarding" },
   { value: "5", label: "zero-to-one launches" },
 ];
 
@@ -18,20 +18,20 @@ type Case = {
 
 const CASES: Case[] = [
   {
-    headline: "Card payments could be disputed after the fact — and we were absorbing the loss.",
+    headline: "Card payments could be disputed after the fact, and we were absorbing the loss.",
     video:
-      "As first PM at STAMP, a European fintech, I owned the end-to-end payment and compliance flows — Stripe 3DS, KYC and SEPA settlement — across Italy, Spain and Switzerland.",
+      "As first PM at STAMP, a European fintech, I owned the end-to-end payment and compliance flows (Stripe 3DS, KYC and SEPA settlement) across Italy and Spain.",
     aedifico:
-      "I integrated Stripe 3DS and shipped a merchant portal security system, so card payments were authenticated at the point of sale instead of challenged after it.",
+      "I led the Stripe 3DS integration and shipped a merchant portal security system, so card payments were authenticated at the point of sale instead of challenged after it.",
     mitto: "31% reduction in payment disputes.",
   },
   {
-    headline: "Onboarding a merchant meant manual white-glove work — so growth was capped by our own team's time.",
+    headline: "Onboarding a merchant meant manual white-glove work, so growth was capped by our own team's time.",
     video:
       "Bringing a new merchant live depended on hands-on setup from our team. It didn't scale, and it made every new merchant an operational dependency.",
     aedifico:
-      "I ran on-site research with 10 merchants to find where onboarding stalled, then redesigned the flow to fully self-serve and integrated InfoCert digital signatures — so identity and signing happened without us in the loop.",
-    mitto: "~70% faster onboarding — from 45 minutes with an ops person to 10–15 minutes, merchant self-serve.",
+      "I ran on-site research with 10 merchants to find where onboarding stalled, then redesigned the flow to fully self-serve and integrated InfoCert digital signatures, so identity and signing happened without us in the loop.",
+    mitto: "~70% faster onboarding: from 45 minutes with an ops person to 10 to 15 minutes, merchant self-serve.",
   },
 ];
 
@@ -56,7 +56,7 @@ export default function WorkCases() {
     <div className="w-full">
       {/* Section intro */}
       <Reveal>
-        <p className="text-xs tracking-widest text-neutral-600 uppercase mb-3">Madrid · STAMP — the current chapter</p>
+        <p className="text-xs tracking-widest text-neutral-600 uppercase mb-3">My product work at STAMP</p>
         <h2
           className="text-4xl md:text-5xl text-white leading-tight"
           style={{ fontFamily: "var(--font-instrument-serif)", fontStyle: "italic" }}
@@ -96,9 +96,9 @@ export default function WorkCases() {
                 {c.headline}
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <Step label="I see" text={c.video} />
-                <Step label="I build" text={c.aedifico} />
-                <Step label="I ship" text={c.mitto} />
+                <Step label="Context" text={c.video} />
+                <Step label="What I did" text={c.aedifico} />
+                <Step label="Outcome" text={c.mitto} />
               </div>
             </div>
           </Reveal>

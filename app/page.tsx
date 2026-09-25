@@ -17,14 +17,14 @@ export default function Home() {
       <BootSequence onComplete={() => setHeroVisible(true)} />
       <Hero visible={heroVisible} />
 
-      {/* Product work at STAMP — metrics + case studies (WorkCases has its own scroll fade-in) */}
+      {/* Product work at STAMP: metrics + case studies (WorkCases has its own scroll fade-in) */}
       <section id="work" className="w-full max-w-6xl mx-auto px-6 py-24">
         <WorkCases />
       </section>
 
       <Reveal><BuildingWithAI /></Reveal>
 
-      {/* Country map — moved as is from /work, placed above Contact */}
+      {/* Country map: moved as is from /work, placed above Contact */}
       <Reveal>
         <section className="w-full max-w-6xl mx-auto px-6 py-24">
           <p className="text-xs tracking-widest text-neutral-600 uppercase mb-3">See the work</p>

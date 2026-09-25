@@ -20,9 +20,9 @@ const PLACES: Place[] = [
     loc: [40.4, -3.7],
     company: "STAMP",
     role: "Product Manager · European fintech",
-    year: "2024 — now",
+    year: "2024 to now",
     bullets: [
-      "First PM hire — owns the tax-free product portfolio across Italy and Spain.",
+      "First PM hire, owns the tax-free product portfolio across Italy and Spain.",
       "Leads a cross-functional squad of six (UX/UI, frontend, backend, fullstack).",
       "5 zero-to-one launches; shipped a security system that cut disputes 31%.",
     ],
@@ -32,10 +32,10 @@ const PLACES: Place[] = [
     loc: [41.9, 12.5],
     company: "Born & raised",
     role: "Roots",
-    year: "—",
+    year: "",
     bullets: [
-      "Italian by origin — native speaker, the start of a path through six countries.",
-      "FT / Il Sole 24 Ore — one of '100 under 35' reshaping Italian entrepreneurship (2022).",
+      "Italian by origin and native speaker, the start of a path through six countries.",
+      "FT / Il Sole 24 Ore named her one of '100 under 35' reshaping Italian entrepreneurship (2022).",
     ],
   },
   {
@@ -43,7 +43,7 @@ const PLACES: Place[] = [
     loc: [52.5, 13.4],
     company: "ESMT Berlin",
     role: "MSc Global & Digital Strategy",
-    year: "2021 — 2023",
+    year: "2021 to 2023",
     bullets: [
       "MSc Management, Global and Digital Strategy.",
       "Exchange semester at the Stockholm School of Economics.",
@@ -66,11 +66,11 @@ const PLACES: Place[] = [
     loc: [51.5, -0.1],
     company: "Bayes · Grey · Wayra",
     role: "Studies, consulting & venture",
-    year: "2017 — 2021",
+    year: "2017 to 2021",
     bullets: [
       "BSc Business Management (Digital Innovation & Entrepreneurship), Bayes Business School.",
-      "Grey Consultants — led a UK/EU aerospace market plan presented to the CEO (2020).",
-      "Wayra / Telefónica — launched SafeToNet in Italy and built CatDogFish's UK entry across 5 cities (2017).",
+      "At Grey Consultants, led a UK/EU aerospace market plan presented to the CEO (2020).",
+      "At Wayra / Telefónica, launched SafeToNet in Italy and built CatDogFish's UK entry across 5 cities (2017).",
     ],
   },
   {
@@ -80,7 +80,7 @@ const PLACES: Place[] = [
     role: "Marketing intern",
     year: "2022",
     bullets: [
-      "Ran 400+ nudge-based campaigns across UK, DE, FR, IT, ES — +20% efficiency via A/B testing.",
+      "Ran 400+ nudge-based campaigns across UK, DE, FR, IT and ES, lifting efficiency 20% via A/B testing.",
       "Built the Prime Day 2022 carousel widget; managed 120+ influencers, 100M+ visits.",
     ],
   },
@@ -247,7 +247,7 @@ export default function WorldMap({ onSelectCity }: { onSelectCity?: (city: strin
                 <ul className="flex flex-col gap-2 max-w-md">
                   {PLACES[selected].bullets.map((b, bi) => (
                     <li key={bi} className="flex gap-2 text-sm text-neutral-400 leading-6">
-                      <span className="text-neutral-600 mt-0.5">—</span>
+                      <span className="text-neutral-600 mt-0.5">·</span>
                       <span>{b}</span>
                     </li>
                   ))}

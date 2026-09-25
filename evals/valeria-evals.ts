@@ -1,4 +1,4 @@
-// ValerIA eval suite — 30 questions, written before tuning.
+// ValerIA eval suite: 30 questions, written before tuning.
 // Categories:
 //   recruiter   (15) real questions the corpus SHOULD answer
 //   near-miss   (8)  plausible questions the corpus does NOT cover -> must refuse/defer, never invent

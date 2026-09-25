@@ -29,7 +29,7 @@ export default function BuildingWithAI() {
       </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {/* ValerIA card — featured with animation */}
+        {/* ValerIA card: featured with animation */}
         <Link
           href="/valeria"
           className="group relative rounded-3xl bg-[#0f0f0f] border border-white/5 overflow-hidden flex flex-col justify-between min-h-[460px] sm:min-h-[340px] hover:border-white/10 transition-colors duration-300"
