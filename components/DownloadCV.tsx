@@ -49,6 +49,25 @@ export default function DownloadCV() {
         >
           Download the CV
         </h3>
+
+        {/* Document motif, mirrors the envelope on Book a call */}
+        <div className="flex items-start gap-5 mb-8">
+          <div className="shrink-0 mt-1">
+            <svg width="64" height="48" viewBox="0 0 64 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="12" y="4" width="40" height="40" rx="3" stroke="white" strokeOpacity="0.3" strokeWidth="1.4" />
+              <line x1="18" y1="14" x2="46" y2="14" stroke="white" strokeOpacity="0.25" strokeWidth="1" />
+              <line x1="18" y1="20" x2="46" y2="20" stroke="white" strokeOpacity="0.18" strokeWidth="1" />
+              <line x1="18" y1="26" x2="40" y2="26" stroke="white" strokeOpacity="0.18" strokeWidth="1" />
+              <line x1="18" y1="32" x2="43" y2="32" stroke="white" strokeOpacity="0.12" strokeWidth="1" />
+            </svg>
+          </div>
+          <div className="flex-1 min-w-0 text-xs leading-[1.8] text-neutral-500" style={{ fontFamily: "var(--font-geist-mono)" }}>
+            <div className="text-neutral-400">valeria-greco-cv.pdf</div>
+            <div className="text-neutral-700">Product Manager</div>
+            <div className="text-neutral-700 mt-2">PDF · 1 page</div>
+          </div>
+        </div>
+
         {done ? (
           <motion.p
             initial={{ opacity: 0, y: 8 }}
