@@ -78,15 +78,6 @@ function CaseIcon({ name }: { name: "card" | "users" }) {
 function GlassIcon({ name }: { name: "card" | "users" }) {
   return (
     <span className="relative flex items-center justify-center w-14 h-14 shrink-0">
-      {/* breathing blue spotlight glow (matches the globe) */}
-      <span
-        aria-hidden="true"
-        className="absolute -inset-3 rounded-full"
-        style={{
-          background: "radial-gradient(circle at 50% 32%, rgba(70,130,235,0.45), rgba(90,150,255,0.14) 45%, transparent 72%)",
-          animation: "glass-glow 3s ease-in-out infinite",
-        }}
-      />
       {/* frosted blue-tinted glass tile (floats gently) */}
       <span
         className="relative flex items-center justify-center w-14 h-14 rounded-2xl overflow-hidden"
