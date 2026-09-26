@@ -6,14 +6,22 @@ import ChatPreview from "./ChatPreview";
 
 const otherCards = [
   {
+    title: "My PM lens",
+    description: "A live tool: paste a fuzzy ask and watch it become a scoped product decision, with my PM approach.",
+    href: "/tools/pm-lens",
+    live: true,
+  },
+  {
     title: "Product Request Form",
     description: "Structured intake that turns messy stakeholder asks into scoped, prioritized product requests.",
     href: "/tools/product-request",
+    live: false,
   },
   {
     title: "Bug Triage Agent",
     description: "Automated bug prioritization that classifies reports and files Jira and Notion tickets via Claude.",
     href: "/tools/bug-triage",
+    live: false,
   },
 ];
 
@@ -75,15 +83,25 @@ export default function BuildingWithAI() {
               href={card.href}
               className="group rounded-3xl bg-[#1c1c1c] border border-white/5 p-7 flex flex-col gap-2 hover:border-white/10 transition-colors duration-300"
             >
-              <h3
-                className="text-xl text-white"
-                style={{ fontFamily: "var(--font-instrument-serif)", fontStyle: "italic" }}
-              >
-                {card.title}
-              </h3>
+              <div className="flex items-center gap-2">
+                <h3
+                  className="text-xl text-white"
+                  style={{ fontFamily: "var(--font-instrument-serif)", fontStyle: "italic" }}
+                >
+                  {card.title}
+                </h3>
+                {card.live && (
+                  <span
+                    className="text-[10px] tracking-widest uppercase text-blue-300/90 border border-blue-300/30 rounded-full px-2 py-0.5"
+                    style={{ fontFamily: "var(--font-geist-mono)" }}
+                  >
+                    Live
+                  </span>
+                )}
+              </div>
               <p className="text-sm text-neutral-500">{card.description}</p>
               <span className="text-xs text-neutral-600 group-hover:text-white transition-colors duration-200 mt-1">
-                Read more →
+                {card.live ? "Try it →" : "Read more →"}
               </span>
             </Link>
           ))}
