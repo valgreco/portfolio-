@@ -1,7 +1,7 @@
 "use client";
 
 import Reveal from "./Reveal";
-import { motion, useReducedMotion } from "framer-motion";
+import { CreditCard, UserPlus } from "lucide-react";
 
 const STATS = [
   { value: "31%", label: "fewer payment disputes" },
@@ -19,60 +19,9 @@ type Case = {
   mitto: string;
 };
 
-const EASE_ICON = [0.16, 1, 0.3, 1] as const;
-
 function CaseIcon({ name }: { name: "card" | "users" }) {
-  const reduced = useReducedMotion();
-
-  // Each entry: [d, delay]. Drawn in sequence for a "sketching" feel.
-  const strokes: { d: string; delay: number }[] =
-    name === "card"
-      ? [
-          { d: "M3 6.5h18a1.5 1.5 0 0 1 1.5 1.5v8a1.5 1.5 0 0 1-1.5 1.5H3A1.5 1.5 0 0 1 1.5 16V8A1.5 1.5 0 0 1 3 6.5Z", delay: 0 },
-          { d: "M1.5 10.5h21", delay: 0.35 },
-          { d: "M5 14.2h4.5", delay: 0.6 },
-          { d: "M15.5 13.4h3.2", delay: 0.75 },
-        ]
-      : [
-          { d: "M9 4.6a3.1 3.1 0 1 1 0 6.2 3.1 3.1 0 0 1 0-6.2Z", delay: 0 },
-          { d: "M3 19.4c0-3.1 2.7-5.2 6-5.2s6 2.1 6 5.2", delay: 0.3 },
-          { d: "M16.2 6a2.9 2.9 0 0 1 0 5.6", delay: 0.55 },
-          { d: "M17.8 14.4c2.3.6 3.9 2.3 3.9 4.9", delay: 0.75 },
-        ];
-
-  const dot = name === "card"
-    ? { cx: 5, cy: 8.4, r: 1.1 } // chip
-    : null;
-
-  return (
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      {strokes.map((s, i) => (
-        <motion.path
-          key={i}
-          d={s.d}
-          stroke="currentColor"
-          strokeWidth="1.4"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          initial={reduced ? { pathLength: 1 } : { pathLength: 0 }}
-          whileInView={{ pathLength: 1 }}
-          viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.7, ease: EASE_ICON, delay: s.delay }}
-        />
-      ))}
-      {dot && (
-        <motion.circle
-          cx={dot.cx} cy={dot.cy} r={dot.r}
-          fill="currentColor"
-          initial={reduced ? { opacity: 1 } : { opacity: 0, scale: 0 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.4, delay: 0.5 }}
-          style={{ transformOrigin: `${dot.cx}px ${dot.cy}px` }}
-        />
-      )}
-    </svg>
-  );
+  const Icon = name === "card" ? CreditCard : UserPlus;
+  return <Icon size={26} strokeWidth={1.6} aria-hidden="true" />;
 }
 
 function GlassIcon({ name }: { name: "card" | "users" }) {
