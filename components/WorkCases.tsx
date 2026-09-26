@@ -156,14 +156,29 @@ export default function WorkCases() {
           <Reveal key={i}>
             <div className="border-t border-white/10 pt-10">
               <div className="flex items-center gap-3 mb-5">
-                <span
-                  className="flex items-center justify-center w-12 h-12 rounded-2xl border border-white/10 text-white"
-                  style={{
-                    background: "linear-gradient(to bottom, rgba(255,255,255,0.09), rgba(255,255,255,0.02))",
-                    boxShadow: "inset 0 1px 0 rgba(255,255,255,0.10), 0 1px 2px rgba(0,0,0,0.4)",
-                  }}
-                >
-                  <CaseIcon name={c.icon} />
+                <span className="relative flex items-center justify-center w-14 h-14 shrink-0">
+                  {/* spotlight glow */}
+                  <span
+                    aria-hidden="true"
+                    className="absolute -inset-2 rounded-full"
+                    style={{ background: "radial-gradient(circle at 50% 32%, rgba(255,255,255,0.18), transparent 68%)" }}
+                  />
+                  {/* frosted glass tile */}
+                  <span
+                    className="relative flex items-center justify-center w-14 h-14 rounded-2xl text-white"
+                    style={{
+                      background: "linear-gradient(155deg, rgba(255,255,255,0.22), rgba(255,255,255,0.05) 55%, rgba(255,255,255,0.02))",
+                      backdropFilter: "blur(6px)",
+                      WebkitBackdropFilter: "blur(6px)",
+                      border: "1px solid rgba(255,255,255,0.20)",
+                      boxShadow:
+                        "inset 0 1.5px 1px rgba(255,255,255,0.45), inset 0 -10px 16px rgba(255,255,255,0.04), 0 8px 24px rgba(0,0,0,0.55)",
+                    }}
+                  >
+                    <span style={{ filter: "drop-shadow(0 1px 2px rgba(0,0,0,0.35))" }}>
+                      <CaseIcon name={c.icon} />
+                    </span>
+                  </span>
                 </span>
                 <span className="text-xs tracking-widest text-neutral-500 uppercase">{c.tag}</span>
               </div>
