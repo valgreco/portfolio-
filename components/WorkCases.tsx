@@ -75,6 +75,51 @@ function CaseIcon({ name }: { name: "card" | "users" }) {
   );
 }
 
+function GlassIcon({ name }: { name: "card" | "users" }) {
+  const reduced = useReducedMotion();
+  return (
+    <span className="relative flex items-center justify-center w-14 h-14 shrink-0">
+      {/* breathing spotlight glow */}
+      <motion.span
+        aria-hidden="true"
+        className="absolute -inset-3 rounded-full"
+        style={{ background: "radial-gradient(circle at 50% 30%, rgba(150,180,255,0.22), rgba(255,255,255,0.06) 40%, transparent 70%)" }}
+        animate={reduced ? {} : { opacity: [0.5, 1, 0.5], scale: [0.96, 1.04, 0.96] }}
+        transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
+      />
+      {/* frosted glass tile */}
+      <motion.span
+        className="relative flex items-center justify-center w-14 h-14 rounded-2xl overflow-hidden text-white"
+        style={{
+          background: "linear-gradient(155deg, rgba(214,224,255,0.26), rgba(255,255,255,0.06) 55%, rgba(255,255,255,0.02))",
+          backdropFilter: "blur(8px)",
+          WebkitBackdropFilter: "blur(8px)",
+          border: "1px solid rgba(255,255,255,0.22)",
+          boxShadow:
+            "inset 0 2px 1px rgba(255,255,255,0.55), inset 0 -12px 18px rgba(120,150,255,0.06), 0 10px 28px rgba(0,0,0,0.55)",
+        }}
+        animate={reduced ? {} : { y: [0, -3, 0] }}
+        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+      >
+        {/* light sheen sweeping across the glass */}
+        {!reduced && (
+          <motion.span
+            aria-hidden="true"
+            className="absolute top-0 bottom-0 w-1/2"
+            style={{ background: "linear-gradient(105deg, transparent, rgba(255,255,255,0.35), transparent)" }}
+            initial={{ x: "-180%" }}
+            animate={{ x: "260%" }}
+            transition={{ duration: 2.6, repeat: Infinity, repeatDelay: 2.4, ease: "easeInOut" }}
+          />
+        )}
+        <span className="relative z-10" style={{ filter: "drop-shadow(0 1px 2px rgba(0,0,0,0.4))" }}>
+          <CaseIcon name={name} />
+        </span>
+      </motion.span>
+    </span>
+  );
+}
+
 const CASES: Case[] = [
   {
     icon: "card",
@@ -156,30 +201,7 @@ export default function WorkCases() {
           <Reveal key={i}>
             <div className="border-t border-white/10 pt-10">
               <div className="flex items-center gap-3 mb-5">
-                <span className="relative flex items-center justify-center w-14 h-14 shrink-0">
-                  {/* spotlight glow */}
-                  <span
-                    aria-hidden="true"
-                    className="absolute -inset-2 rounded-full"
-                    style={{ background: "radial-gradient(circle at 50% 32%, rgba(255,255,255,0.18), transparent 68%)" }}
-                  />
-                  {/* frosted glass tile */}
-                  <span
-                    className="relative flex items-center justify-center w-14 h-14 rounded-2xl text-white"
-                    style={{
-                      background: "linear-gradient(155deg, rgba(255,255,255,0.22), rgba(255,255,255,0.05) 55%, rgba(255,255,255,0.02))",
-                      backdropFilter: "blur(6px)",
-                      WebkitBackdropFilter: "blur(6px)",
-                      border: "1px solid rgba(255,255,255,0.20)",
-                      boxShadow:
-                        "inset 0 1.5px 1px rgba(255,255,255,0.45), inset 0 -10px 16px rgba(255,255,255,0.04), 0 8px 24px rgba(0,0,0,0.55)",
-                    }}
-                  >
-                    <span style={{ filter: "drop-shadow(0 1px 2px rgba(0,0,0,0.35))" }}>
-                      <CaseIcon name={c.icon} />
-                    </span>
-                  </span>
-                </span>
+                <GlassIcon name={c.icon} />
                 <span className="text-xs tracking-widest text-neutral-500 uppercase">{c.tag}</span>
               </div>
               <h3 className="text-xl md:text-2xl text-white leading-snug max-w-2xl mb-8">
