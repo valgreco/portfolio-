@@ -32,7 +32,7 @@ export default function BuildingWithAI() {
         {/* ValerIA card: featured with animation */}
         <Link
           href="/valeria"
-          className="group relative rounded-3xl bg-[#1c1c1c] border border-white/5 overflow-hidden flex flex-col justify-between min-h-[460px] sm:min-h-[340px] hover:border-white/10 transition-colors duration-300"
+          className="group relative rounded-3xl bg-[#1c1c1c] border border-white/5 overflow-hidden flex flex-col justify-between min-h-[480px] hover:border-white/10 transition-colors duration-300"
         >
           <div className="relative z-10 p-7">
             <p className="text-xs tracking-widest text-neutral-600 uppercase mb-2">Agent</p>
