@@ -156,7 +156,13 @@ export default function WorkCases() {
           <Reveal key={i}>
             <div className="border-t border-white/10 pt-10">
               <div className="flex items-center gap-3 mb-5">
-                <span className="flex items-center justify-center w-11 h-11 rounded-2xl border border-white/10 bg-white/[0.03] text-white/80">
+                <span
+                  className="flex items-center justify-center w-12 h-12 rounded-2xl border border-white/10 text-white"
+                  style={{
+                    background: "linear-gradient(to bottom, rgba(255,255,255,0.09), rgba(255,255,255,0.02))",
+                    boxShadow: "inset 0 1px 0 rgba(255,255,255,0.10), 0 1px 2px rgba(0,0,0,0.4)",
+                  }}
+                >
                   <CaseIcon name={c.icon} />
                 </span>
                 <span className="text-xs tracking-widest text-neutral-500 uppercase">{c.tag}</span>
