@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { track } from "@vercel/analytics";
 import ParticlePortrait from "@/components/ParticlePortrait";
 import RichText from "@/components/RichText";
 
@@ -90,6 +91,11 @@ export default function ValerIAPage() {
   async function send() {
     const text = input.trim();
     if (!text || loading) return;
+
+    // Track only the first question of the session.
+    if (messages.filter((m) => m.role === "user").length === 0) {
+      track("valeria_chat_started");
+    }
 
     const updated: Message[] = [...messages, { role: "user", content: text }];
     setMessages(updated);

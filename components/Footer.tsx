@@ -1,5 +1,7 @@
 "use client";
 
+import { track } from "@vercel/analytics";
+
 export default function Footer() {
   return (
     <footer className="w-full max-w-6xl mx-auto px-6 pt-8 pb-16">
@@ -18,6 +20,7 @@ export default function Footer() {
           href="https://www.linkedin.com/in/valeriagreco99/"
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() => track("linkedin_click")}
           className="group text-neutral-400 hover:text-white transition-colors duration-200"
         >
           LinkedIn{" "}
@@ -27,6 +30,7 @@ export default function Footer() {
           href="https://substack.com/@leragre"
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() => track("substack_click")}
           className="group text-neutral-400 hover:text-white transition-colors duration-200"
         >
           Substack{" "}

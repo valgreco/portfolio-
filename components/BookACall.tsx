@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
+import { track } from "@vercel/analytics";
 
 const EASE = [0.16, 1, 0.3, 1] as const;
 
@@ -84,6 +85,7 @@ export default function BookACall() {
     const body = encodeURIComponent(
       `Hi Valeria,\n\nI'd love to schedule a call with you.\n\nName: ${form.name}\nCompany: ${form.company}\nReason: ${form.reason}\n\nLooking forward to connecting!`
     );
+    track("book_a_call", { company: form.company });
     setLaunched(true);
     // let the plane take off, then open the mail client
     setTimeout(() => {

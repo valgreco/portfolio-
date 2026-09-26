@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { track } from "@vercel/analytics";
 
 // The CV file lives in /public. Drop the PDF there with this name.
 const CV_PATH = "/valeria-greco-cv.pdf";
@@ -15,6 +16,8 @@ export default function DownloadCV() {
     e.preventDefault();
     if (loading) return;
     setLoading(true);
+
+    track("cv_download", { company: form.company });
 
     try {
       await fetch("/api/cv-request", {
