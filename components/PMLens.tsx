@@ -11,6 +11,7 @@ type Result = {
   scope: { in: string[]; out: string[] };
   metric: string;
   priority: { call: string; reasoning: string };
+  assumption?: string;
 };
 
 const EXAMPLES = [
@@ -163,6 +164,11 @@ export default function PMLens() {
             <span className="text-white">{result.priority.call}.</span>{" "}
             <span className="text-neutral-400">{result.priority.reasoning}</span>
           </Field>
+          {result.assumption && (
+            <Field label="Key assumption">
+              <span className="text-neutral-400">{result.assumption}</span>
+            </Field>
+          )}
 
           <button
             onClick={() => { setResult(null); setInput(""); }}

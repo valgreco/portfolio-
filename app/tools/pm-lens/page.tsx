@@ -24,6 +24,19 @@ export default function PMLensPage() {
         </p>
 
         <PMLens />
+
+        {/* Transparency: how it's built */}
+        <div className="mt-20 pt-8 border-t border-white/10 max-w-2xl">
+          <p className="text-xs tracking-widest text-neutral-600 uppercase mb-3" style={{ fontFamily: "var(--font-geist-mono)" }}>
+            How it&apos;s built
+          </p>
+          <p className="text-sm text-neutral-500 leading-7">
+            No magic: a Next.js route calls Claude with a system prompt that encodes my product
+            approach (find the real problem, scope ruthlessly, always a metric and a call). The model
+            returns structured JSON that the page renders. Same pattern I use to build internal tools
+            at work, put here so you can see how I think, not just read about it.
+          </p>
+        </div>
       </div>
     </main>
   );
