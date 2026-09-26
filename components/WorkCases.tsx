@@ -76,46 +76,44 @@ function CaseIcon({ name }: { name: "card" | "users" }) {
 }
 
 function GlassIcon({ name }: { name: "card" | "users" }) {
-  const reduced = useReducedMotion();
   return (
     <span className="relative flex items-center justify-center w-14 h-14 shrink-0">
-      {/* breathing spotlight glow */}
-      <motion.span
+      {/* breathing blue spotlight glow (matches the globe) */}
+      <span
         aria-hidden="true"
         className="absolute -inset-3 rounded-full"
-        style={{ background: "radial-gradient(circle at 50% 30%, rgba(150,180,255,0.22), rgba(255,255,255,0.06) 40%, transparent 70%)" }}
-        animate={reduced ? {} : { opacity: [0.5, 1, 0.5], scale: [0.96, 1.04, 0.96] }}
-        transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
-      />
-      {/* frosted glass tile */}
-      <motion.span
-        className="relative flex items-center justify-center w-14 h-14 rounded-2xl overflow-hidden text-white"
         style={{
-          background: "linear-gradient(155deg, rgba(214,224,255,0.26), rgba(255,255,255,0.06) 55%, rgba(255,255,255,0.02))",
+          background: "radial-gradient(circle at 50% 32%, rgba(70,130,235,0.45), rgba(90,150,255,0.14) 45%, transparent 72%)",
+          animation: "glass-glow 3s ease-in-out infinite",
+        }}
+      />
+      {/* frosted blue-tinted glass tile (floats gently) */}
+      <span
+        className="relative flex items-center justify-center w-14 h-14 rounded-2xl overflow-hidden"
+        style={{
+          color: "#cfe0ff",
+          background: "linear-gradient(155deg, rgba(120,165,255,0.32), rgba(90,130,230,0.08) 55%, rgba(255,255,255,0.02))",
           backdropFilter: "blur(8px)",
           WebkitBackdropFilter: "blur(8px)",
-          border: "1px solid rgba(255,255,255,0.22)",
+          border: "1px solid rgba(150,185,255,0.30)",
           boxShadow:
-            "inset 0 2px 1px rgba(255,255,255,0.55), inset 0 -12px 18px rgba(120,150,255,0.06), 0 10px 28px rgba(0,0,0,0.55)",
+            "inset 0 2px 1px rgba(220,230,255,0.55), inset 0 -12px 18px rgba(70,120,230,0.16), 0 10px 28px rgba(20,40,90,0.55)",
+          animation: "glass-float 4s ease-in-out infinite",
         }}
-        animate={reduced ? {} : { y: [0, -3, 0] }}
-        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
       >
         {/* light sheen sweeping across the glass */}
-        {!reduced && (
-          <motion.span
-            aria-hidden="true"
-            className="absolute top-0 bottom-0 w-1/2"
-            style={{ background: "linear-gradient(105deg, transparent, rgba(255,255,255,0.35), transparent)" }}
-            initial={{ x: "-180%" }}
-            animate={{ x: "260%" }}
-            transition={{ duration: 2.6, repeat: Infinity, repeatDelay: 2.4, ease: "easeInOut" }}
-          />
-        )}
+        <span
+          aria-hidden="true"
+          className="absolute top-0 bottom-0 w-2/3"
+          style={{
+            background: "linear-gradient(105deg, transparent, rgba(255,255,255,0.6), transparent)",
+            animation: "glass-sheen 2.6s ease-in-out infinite",
+          }}
+        />
         <span className="relative z-10" style={{ filter: "drop-shadow(0 1px 2px rgba(0,0,0,0.4))" }}>
           <CaseIcon name={name} />
         </span>
-      </motion.span>
+      </span>
     </span>
   );
 }

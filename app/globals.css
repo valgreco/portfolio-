@@ -73,6 +73,21 @@ textarea:focus-visible {
   50% { opacity: 0; }
 }
 
+@keyframes glass-sheen {
+  0% { transform: translateX(-160%); }
+  55%, 100% { transform: translateX(230%); }
+}
+
+@keyframes glass-glow {
+  0%, 100% { opacity: 0.4; transform: scale(0.9); }
+  50% { opacity: 1; transform: scale(1.12); }
+}
+
+@keyframes glass-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
