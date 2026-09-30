@@ -16,7 +16,7 @@ export default function GridFlow() {
   return (
     <div
       aria-hidden="true"
-      style={{ position: "fixed", inset: 0, zIndex: -1, pointerEvents: "none" }}
+      style={{ position: "fixed", inset: 0, zIndex: 0, pointerEvents: "none" }}
     >
       <svg
         width="100%"
@@ -35,16 +35,17 @@ export default function GridFlow() {
         {PATHS.map((p, i) => (
           <g key={i}>
             {/* faint static track */}
-            <path d={p.d} stroke="rgba(130,160,255,0.06)" strokeWidth="1" strokeLinecap="round" />
+            <path d={p.d} stroke="rgba(130,160,255,0.12)" strokeWidth="1.2" strokeLinecap="round" />
             {/* travelling light segment */}
             <path
               d={p.d}
-              stroke="url(#flow-fade)"
-              strokeWidth="1.4"
+              stroke="rgba(150,185,255,0.95)"
+              strokeWidth="2"
               strokeLinecap="round"
               pathLength={1000}
               style={{
-                strokeDasharray: "70 930",
+                strokeDasharray: "90 910",
+                filter: "drop-shadow(0 0 4px rgba(120,160,255,0.7))",
                 animation: `grid-flow ${p.dur}s linear ${p.delay}s infinite`,
               }}
             />

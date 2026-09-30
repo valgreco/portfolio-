@@ -58,8 +58,10 @@ export default function RootLayout({
         <GridFlow />
         <Nav />
         <LenisProvider>
-          {children}
-          <Footer />
+          <div className="relative z-10">
+            {children}
+            <Footer />
+          </div>
         </LenisProvider>
         <Analytics />
       </body>
