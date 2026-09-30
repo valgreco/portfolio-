@@ -37,16 +37,17 @@ export default function GridFlow() {
         {PATHS.map((p, i) => (
           <g key={i}>
             {/* faint static track */}
-            <path d={p.d} stroke="rgba(255,255,255,0.05)" strokeWidth="1" strokeLinecap="round" />
-            {/* even streak travelling the line, subtle white */}
+            <path d={p.d} stroke="rgba(130,160,255,0.09)" strokeWidth="1.1" strokeLinecap="round" />
+            {/* even streak of light travelling the line */}
             <path
               d={p.d}
-              stroke={`rgba(255,255,255,${(p.op * 0.4).toFixed(2)})`}
-              strokeWidth={Math.max(1, p.w - 0.3)}
+              stroke={`rgba(165,195,255,${p.op})`}
+              strokeWidth={p.w}
               strokeLinecap="round"
               pathLength={1000}
               style={{
                 strokeDasharray: "52 948",
+                filter: "drop-shadow(0 0 3px rgba(120,160,255,0.5))",
                 animation: `grid-flow ${p.dur}s linear ${p.delay}s infinite`,
               }}
             />
