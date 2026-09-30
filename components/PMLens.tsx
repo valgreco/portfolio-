@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { track } from "@vercel/analytics";
+import { Target, Users, Lightbulb, Layers, TrendingUp, Flag, HelpCircle } from "lucide-react";
 
 type Result = {
   realProblem: string;
@@ -20,18 +21,27 @@ const EXAMPLES = [
   "Can we add AI to the dashboard?",
 ];
 
-function Field({ label, children }: { label: string; children: React.ReactNode }) {
+function Field({ icon: Icon, label, children }: { icon: React.ElementType; label: string; children: React.ReactNode }) {
   return (
     <div className="border-t border-white/10 pt-5">
-      <p
-        className="text-xs tracking-widest text-neutral-500 uppercase mb-2"
-        style={{ fontFamily: "var(--font-geist-mono)" }}
-      >
-        {label}
-      </p>
-      <div className="text-sm text-neutral-300 leading-7">{children}</div>
+      <div className="flex items-center gap-2 mb-2">
+        <span className="flex items-center justify-center w-6 h-6 rounded-lg border border-white/10 bg-white/[0.03] text-blue-300/80">
+          <Icon size={13} strokeWidth={1.8} aria-hidden="true" />
+        </span>
+        <p className="text-xs tracking-widest text-neutral-500 uppercase" style={{ fontFamily: "var(--font-geist-mono)" }}>
+          {label}
+        </p>
+      </div>
+      <div className="text-sm text-neutral-300 leading-7 pl-8">{children}</div>
     </div>
   );
+}
+
+function priorityStyle(call: string) {
+  const c = call.toLowerCase();
+  if (c.includes("now")) return "text-blue-200 bg-blue-500/20 border-blue-400/40";
+  if (c.includes("next")) return "text-neutral-200 bg-white/[0.06] border-white/20";
+  return "text-neutral-400 bg-white/[0.02] border-white/10";
 }
 
 export default function PMLens() {
@@ -130,17 +140,17 @@ export default function PMLens() {
           transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
           className="mt-10 flex flex-col gap-6"
         >
-          <Field label="The real problem">{result.realProblem}</Field>
-          <Field label="Who it affects">{result.affected}</Field>
-          <Field label="What they need">{result.need}</Field>
-          <Field label="Scope">
+          <Field icon={Target} label="The real problem"><span className="text-neutral-200">{result.realProblem}</span></Field>
+          <Field icon={Users} label="Who it affects">{result.affected}</Field>
+          <Field icon={Lightbulb} label="What they need">{result.need}</Field>
+          <Field icon={Layers} label="Scope">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <p className="text-xs text-neutral-500 mb-1">In</p>
-                <ul className="flex flex-col gap-1">
+                <ul className="flex flex-col gap-1.5">
                   {result.scope.in.map((s, i) => (
                     <li key={i} className="flex gap-2">
-                      <span className="text-neutral-600">+</span>
+                      <span className="text-blue-300/70 mt-px">+</span>
                       <span>{s}</span>
                     </li>
                   ))}
@@ -148,10 +158,10 @@ export default function PMLens() {
               </div>
               <div>
                 <p className="text-xs text-neutral-500 mb-1">Out</p>
-                <ul className="flex flex-col gap-1">
+                <ul className="flex flex-col gap-1.5">
                   {result.scope.out.map((s, i) => (
                     <li key={i} className="flex gap-2">
-                      <span className="text-neutral-600">–</span>
+                      <span className="text-neutral-600 mt-px">·</span>
                       <span className="text-neutral-500">{s}</span>
                     </li>
                   ))}
@@ -159,14 +169,18 @@ export default function PMLens() {
               </div>
             </div>
           </Field>
-          <Field label="Success metric">{result.metric}</Field>
-          <Field label="Priority">
-            <span className="text-white">{result.priority.call}.</span>{" "}
-            <span className="text-neutral-400">{result.priority.reasoning}</span>
+          <Field icon={TrendingUp} label="Success metric">{result.metric}</Field>
+          <Field icon={Flag} label="Priority">
+            <div className="flex items-center gap-3 flex-wrap">
+              <span className={`text-xs tracking-wide uppercase border rounded-full px-2.5 py-1 ${priorityStyle(result.priority.call)}`} style={{ fontFamily: "var(--font-geist-mono)" }}>
+                {result.priority.call}
+              </span>
+              <span className="text-neutral-400">{result.priority.reasoning}</span>
+            </div>
           </Field>
           {result.assumption && (
-            <Field label="Key assumption">
-              <span className="text-neutral-400">{result.assumption}</span>
+            <Field icon={HelpCircle} label="Key assumption">
+              <span className="text-neutral-400 italic">{result.assumption}</span>
             </Field>
           )}
 
