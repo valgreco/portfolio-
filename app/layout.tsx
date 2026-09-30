@@ -4,7 +4,7 @@ import "./globals.css";
 import LenisProvider from "@/components/LenisProvider";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
-import GridSpotlight from "@/components/GridSpotlight";
+import GridFlow from "@/components/GridFlow";
 import { Analytics } from "@vercel/analytics/next";
 
 const geistSans = Geist({
@@ -55,7 +55,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} ${instrumentSerif.variable} antialiased`}
     >
       <body className="min-h-screen">
-        <GridSpotlight />
+        <GridFlow />
         <Nav />
         <LenisProvider>
           {children}

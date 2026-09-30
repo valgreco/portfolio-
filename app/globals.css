@@ -89,6 +89,13 @@ textarea:focus-visible {
   50% { transform: translateY(-5px); }
 }
 
+@keyframes grid-flow {
+  0% { stroke-dashoffset: 1000; opacity: 0; }
+  8% { opacity: 1; }
+  92% { opacity: 1; }
+  100% { stroke-dashoffset: 0; opacity: 0; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
