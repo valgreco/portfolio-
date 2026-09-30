@@ -27,18 +27,6 @@ const PATHS: Flow[] = [
   { d: "M1040 -40 V120 Q1040 160 1000 160 H760 Q720 160 720 200 V360", dur: 12, delay: 0.5, op: 0.5, w: 1.2 },
 ];
 
-// Nodes that pulse / ping at grid intersections, like a circuit lighting up.
-const NODES: { cx: number; cy: number; delay: number; dur: number }[] = [
-  { cx: 240, cy: 160, delay: 0, dur: 7 },
-  { cx: 240, cy: 400, delay: 2.5, dur: 9 },
-  { cx: 1120, cy: 280, delay: 1, dur: 8 },
-  { cx: 1040, cy: 240, delay: 4, dur: 10 },
-  { cx: 800, cy: 200, delay: 3, dur: 7.5 },
-  { cx: 680, cy: 640, delay: 5.5, dur: 9 },
-  { cx: 1200, cy: 680, delay: 2, dur: 8.5 },
-  { cx: 400, cy: 680, delay: 6, dur: 10 },
-];
-
 export default function GridFlow() {
   return (
     <div
@@ -61,34 +49,6 @@ export default function GridFlow() {
                 strokeDasharray: "52 948",
                 filter: "drop-shadow(0 0 3px rgba(120,160,255,0.5))",
                 animation: `grid-flow ${p.dur}s linear ${p.delay}s infinite`,
-              }}
-            />
-          </g>
-        ))}
-        {/* pulsing / pinging nodes */}
-        {NODES.map((n, i) => (
-          <g key={`n${i}`} style={{ transformBox: "fill-box", transformOrigin: "center" }}>
-            <circle
-              cx={n.cx}
-              cy={n.cy}
-              r={5}
-              fill="none"
-              stroke="rgba(150,185,255,0.8)"
-              strokeWidth="1"
-              style={{
-                transformBox: "fill-box",
-                transformOrigin: "center",
-                animation: `grid-ping ${n.dur}s ease-out ${n.delay}s infinite`,
-              }}
-            />
-            <circle
-              cx={n.cx}
-              cy={n.cy}
-              r={1.6}
-              fill="rgba(170,200,255,0.95)"
-              style={{
-                filter: "drop-shadow(0 0 3px rgba(120,160,255,0.7))",
-                animation: `grid-node ${n.dur}s ease-in-out ${n.delay}s infinite`,
               }}
             />
           </g>
