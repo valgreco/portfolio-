@@ -5,6 +5,8 @@ import LenisProvider from "@/components/LenisProvider";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import GridFlow from "@/components/GridFlow";
+import CommandPalette from "@/components/CommandPalette";
+import EasterEgg from "@/components/EasterEgg";
 import { Analytics } from "@vercel/analytics/next";
 
 const geistSans = Geist({
@@ -63,6 +65,8 @@ export default function RootLayout({
             <Footer />
           </div>
         </LenisProvider>
+        <CommandPalette />
+        <EasterEgg />
         <Analytics />
       </body>
     </html>

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import ConcentricRings from "./ConcentricRings";
 import ChatPreview from "./ChatPreview";
+import Tilt from "./Tilt";
 
 const otherCards = [
   {
@@ -78,10 +79,10 @@ export default function BuildingWithAI() {
         {/* Other cards */}
         <div className="flex flex-col gap-4">
           {otherCards.map((card) => (
+            <Tilt key={card.title}>
             <Link
-              key={card.title}
               href={card.href}
-              className="group rounded-3xl bg-[#1c1c1c] border border-white/5 p-7 flex flex-col gap-2 hover:border-white/10 transition-colors duration-300"
+              className="group rounded-3xl bg-[#1c1c1c] border border-white/5 p-7 flex flex-col gap-2 hover:border-white/10 transition-colors duration-300 h-full"
             >
               <div className="flex items-center gap-2">
                 <h3
@@ -104,6 +105,7 @@ export default function BuildingWithAI() {
                 {card.live ? "Try it →" : "Read more →"}
               </span>
             </Link>
+            </Tilt>
           ))}
         </div>
       </div>
