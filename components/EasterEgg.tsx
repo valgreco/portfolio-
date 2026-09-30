@@ -43,8 +43,8 @@ export default function EasterEgg() {
           style={{ background: "#1c1c1c", boxShadow: "0 12px 40px rgba(0,0,0,0.5)", fontFamily: "var(--font-geist-mono)" }}
         >
           <p className="text-xs text-neutral-400">
-            <span className="text-neutral-600">$</span> cheat code accepted.{" "}
-            <span className="text-white">Now go hire Valeria.</span>
+            <span className="text-neutral-600">$</span> friend request accepted.{" "}
+            <span className="text-white">Now go hire Lera.</span>
           </p>
         </motion.div>
       )}
