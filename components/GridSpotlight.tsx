@@ -2,16 +2,14 @@
 
 import { useEffect, useRef } from "react";
 
-// A viewport-fixed overlay that shows a brighter, blue-tinted copy of the grid,
-// revealed only in a soft circle around the cursor. Aligns with the body grid
-// (same 40px cell, both viewport-fixed).
+// A viewport-fixed overlay that lights up the grid (plus a soft glow) around the
+// cursor. Uses "screen" blending so it only ADDS light and never darkens content.
 export default function GridSpotlight() {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-    // Respect reduced motion: no cursor tracking.
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     let raf = 0;
@@ -37,26 +35,40 @@ export default function GridSpotlight() {
   }, []);
 
   const mask =
-    "radial-gradient(circle 170px at var(--mx, -300px) var(--my, -300px), rgba(0,0,0,1), rgba(0,0,0,0) 72%)";
+    "radial-gradient(circle 200px at var(--mx, -400px) var(--my, -400px), rgba(0,0,0,1), rgba(0,0,0,0) 75%)";
 
   return (
-    <div
-      ref={ref}
-      aria-hidden="true"
-      style={{
-        position: "fixed",
-        inset: 0,
-        zIndex: -1,
-        pointerEvents: "none",
-        opacity: 0,
-        transition: "opacity 0.4s ease",
-        backgroundImage:
-          "linear-gradient(to right, rgba(120,160,255,0.45) 1px, transparent 1px), linear-gradient(to bottom, rgba(120,160,255,0.45) 1px, transparent 1px)",
-        backgroundSize: "40px 40px",
-        backgroundAttachment: "fixed",
-        maskImage: mask,
-        WebkitMaskImage: mask,
-      }}
-    />
+    <>
+      {/* Soft blue light that follows the cursor */}
+      <div
+        aria-hidden="true"
+        ref={ref}
+        style={{
+          position: "fixed",
+          inset: 0,
+          zIndex: 30,
+          pointerEvents: "none",
+          opacity: 0,
+          transition: "opacity 0.35s ease",
+          mixBlendMode: "screen",
+          background:
+            "radial-gradient(circle 220px at var(--mx, -400px) var(--my, -400px), rgba(70,120,240,0.16), rgba(70,120,240,0) 70%)",
+        }}
+      >
+        {/* Brighter grid revealed inside the spotlight */}
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            backgroundImage:
+              "linear-gradient(to right, rgba(130,170,255,0.9) 1px, transparent 1px), linear-gradient(to bottom, rgba(130,170,255,0.9) 1px, transparent 1px)",
+            backgroundSize: "40px 40px",
+            backgroundAttachment: "fixed",
+            maskImage: mask,
+            WebkitMaskImage: mask,
+          }}
+        />
+      </div>
+    </>
   );
 }
