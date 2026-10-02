@@ -247,6 +247,47 @@ export default function ValerIAPage() {
           </div>
         </motion.div>
 
+        {/* How ValerIA is built */}
+        <div className="mt-24 pt-10 border-t border-white/10">
+          <p className="text-xs tracking-widest text-neutral-600 uppercase mb-5" style={{ fontFamily: "var(--font-geist-mono)" }}>
+            How she&apos;s built
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-8">
+            {[
+              { k: "Claude Haiku", v: "The model behind her answers." },
+              { k: "Curated corpus", v: "A hand-written source of truth, so she only knows what's true." },
+              { k: "Guardrails", v: "Never invents facts, never reveals salary, points to LinkedIn when unsure." },
+            ].map((c) => (
+              <div key={c.k}>
+                <p className="text-sm text-white mb-1">{c.k}</p>
+                <p className="text-xs text-neutral-500 leading-6">{c.v}</p>
+              </div>
+            ))}
+          </div>
+          <div className="rounded-2xl bg-[#1c1c1c] border border-white/5 p-6">
+            <div className="flex items-baseline gap-3 mb-3">
+              <span className="text-3xl text-white" style={{ fontFamily: "var(--font-geist-mono)" }}>30</span>
+              <span className="text-sm text-neutral-400">eval questions she&apos;s tested against, written before tuning.</span>
+            </div>
+            <p className="text-xs text-neutral-500 leading-7">
+              Every change to her prompt runs against this suite, so she stays accurate as I improve her.
+              The ones she can&apos;t answer become new content and new tests. A few of them:
+            </p>
+            <div className="flex flex-wrap gap-2 mt-4">
+              {[
+                "What's the most measurable impact she's had?",
+                "Tell me about the disputes work.",
+                "What does she do right now?",
+                "What languages does she speak?",
+              ].map((q) => (
+                <span key={q} className="text-xs text-neutral-500 border border-white/10 rounded-full px-3 py-1.5">
+                  {q}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+
       </div>
     </main>
   );
