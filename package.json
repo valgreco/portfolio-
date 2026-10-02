@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "eval": "tsx evals/run.ts"
+    "eval": "tsx evals/run.ts",
+    "ingest": "node scripts/ingest-substack.mjs https://leragreco.substack.com"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.112.4",

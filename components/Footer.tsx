@@ -27,7 +27,7 @@ export default function Footer() {
           <span className="inline-block transition-transform duration-200 group-hover:translate-x-1">↗</span>
         </a>
         <a
-          href="https://substack.com/@leragre"
+          href="https://leragreco.substack.com"
           target="_blank"
           rel="noopener noreferrer"
           onClick={() => track("substack_click")}

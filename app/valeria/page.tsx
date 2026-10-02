@@ -255,8 +255,8 @@ export default function ValerIAPage() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-8">
             {[
               { k: "Claude Haiku", v: "The model behind her answers." },
-              { k: "Curated corpus", v: "A hand-written source of truth, so she only knows what's true." },
-              { k: "Guardrails", v: "Never invents facts, never reveals salary, points to LinkedIn when unsure." },
+              { k: "Fed by her writing", v: "She reads Valeria's Substack essays and answers in her real words, citing the post." },
+              { k: "Guardrails", v: "A curated source of truth, so she never invents facts, reveals salary, or guesses — she points to LinkedIn when unsure." },
             ].map((c) => (
               <div key={c.k}>
                 <p className="text-sm text-white mb-1">{c.k}</p>

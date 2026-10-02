@@ -1,6 +1,6 @@
 import Anthropic from "@anthropic-ai/sdk";
 import { NextRequest, NextResponse } from "next/server";
-import { SYSTEM_PROMPT, MODEL } from "@/lib/valeria-corpus";
+import { buildSystemPrompt, MODEL } from "@/lib/valeria-corpus";
 
 const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
 
@@ -16,7 +16,7 @@ export async function POST(req: NextRequest) {
     const response = await client.messages.create({
       model: MODEL,
       max_tokens: 1024,
-      system: SYSTEM_PROMPT,
+      system: await buildSystemPrompt(),
       messages: anthropicMessages,
     });
 

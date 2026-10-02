@@ -10,7 +10,7 @@ const CONVOS = [
   },
   {
     q: "What has she built with AI?",
-    a: "Five tools in five days: an MCP server, a bug triage agent, a discovery tool, a marketing framework, and me.",
+    a: "Five internal tools: an MCP server, a bug triage agent, a discovery tool, a marketing framework, and me.",
   },
   {
     q: "Where is she based?",
