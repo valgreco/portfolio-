@@ -1,6 +1,8 @@
 "use client";
 
 import Reveal from "./Reveal";
+import CountUp from "./CountUp";
+import { Stagger, StaggerItem } from "./Stagger";
 import { CreditCard, UserPlus } from "lucide-react";
 
 const STATS = [
@@ -117,26 +119,23 @@ export default function WorkCases() {
       </Reveal>
 
       {/* Stats */}
-      <Reveal>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-14 mb-20">
-          {STATS.map((s) => (
-            <div key={s.label}>
-              <div
-                className="text-4xl md:text-5xl text-white mb-2"
-                style={{ fontFamily: "var(--font-geist-mono)" }}
-              >
-                {s.value}
-              </div>
-              <div className="text-xs text-neutral-500 leading-5">{s.label}</div>
-            </div>
-          ))}
-        </div>
-      </Reveal>
+      <Stagger className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-14 mb-20" gap={0.1}>
+        {STATS.map((s) => (
+          <StaggerItem key={s.label}>
+            <CountUp
+              value={s.value}
+              className="text-4xl md:text-5xl text-white mb-2"
+              style={{ fontFamily: "var(--font-geist-mono)" }}
+            />
+            <div className="text-xs text-neutral-500 leading-5">{s.label}</div>
+          </StaggerItem>
+        ))}
+      </Stagger>
 
       {/* Cases */}
-      <div className="flex flex-col gap-16">
+      <Stagger className="flex flex-col gap-16" gap={0.15}>
         {CASES.map((c, i) => (
-          <Reveal key={i}>
+          <StaggerItem key={i}>
             <div className="border-t border-white/10 pt-10">
               <div className="flex items-center gap-3 mb-5">
                 <GlassIcon name={c.icon} />
@@ -151,9 +150,9 @@ export default function WorkCases() {
                 <Step label="Outcome" text={c.mitto} />
               </div>
             </div>
-          </Reveal>
+          </StaggerItem>
         ))}
-      </div>
+      </Stagger>
     </div>
   );
 }

@@ -4,6 +4,7 @@ import Link from "next/link";
 import ConcentricRings from "./ConcentricRings";
 import ChatPreview from "./ChatPreview";
 import Tilt from "./Tilt";
+import { Stagger, StaggerItem } from "./Stagger";
 
 const otherCards = [
   {
@@ -77,9 +78,10 @@ export default function BuildingWithAI() {
         </Link>
 
         {/* Other cards */}
-        <div className="flex flex-col gap-4">
+        <Stagger className="flex flex-col gap-4" gap={0.1}>
           {otherCards.map((card) => (
-            <Tilt key={card.title}>
+            <StaggerItem key={card.title}>
+            <Tilt>
             <Link
               href={card.href}
               className="group rounded-3xl bg-[#1c1c1c] border border-white/5 p-7 flex flex-col gap-2 hover:border-white/10 transition-colors duration-300 h-full"
@@ -106,8 +108,9 @@ export default function BuildingWithAI() {
               </span>
             </Link>
             </Tilt>
+            </StaggerItem>
           ))}
-        </div>
+        </Stagger>
       </div>
     </section>
   );
