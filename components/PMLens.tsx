@@ -44,11 +44,22 @@ function priorityStyle(call: string) {
   return "text-neutral-400 bg-white/[0.02] border-white/10";
 }
 
+const THINKING = [
+  "Reading the request...",
+  "Finding the real problem...",
+  "Mapping who's affected...",
+  "Scoping a tight MVP...",
+  "Setting a metric...",
+  "Making the call...",
+];
+
 export default function PMLens() {
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<Result | null>(null);
   const [error, setError] = useState("");
+  const [step, setStep] = useState(0);
+  const [copied, setCopied] = useState(false);
 
   async function run(text: string) {
     const value = text.trim();
@@ -56,7 +67,10 @@ export default function PMLens() {
     setLoading(true);
     setError("");
     setResult(null);
+    setStep(0);
     track("pm_lens_run");
+
+    const stepper = setInterval(() => setStep((s) => Math.min(s + 1, THINKING.length - 1)), 750);
 
     try {
       const res = await fetch("/api/pm-lens", {
@@ -73,8 +87,27 @@ export default function PMLens() {
     } catch {
       setError("Something went wrong, please try again.");
     } finally {
+      clearInterval(stepper);
       setLoading(false);
     }
+  }
+
+  function copyResult() {
+    if (!result) return;
+    const text = [
+      `The real problem: ${result.realProblem}`,
+      `Who it affects: ${result.affected}`,
+      `What they need: ${result.need}`,
+      `Scope in: ${result.scope.in.join("; ")}`,
+      `Scope out: ${result.scope.out.join("; ")}`,
+      `Success metric: ${result.metric}`,
+      `Priority: ${result.priority.call}. ${result.priority.reasoning}`,
+      result.assumption ? `Key assumption: ${result.assumption}` : "",
+    ].filter(Boolean).join("\n");
+    navigator.clipboard?.writeText(text).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1800);
+    });
   }
 
   return (
@@ -107,6 +140,24 @@ export default function PMLens() {
           </button>
         </div>
       </form>
+
+      {/* Thinking */}
+      {loading && (
+        <div className="mt-6 flex flex-col gap-2" style={{ fontFamily: "var(--font-geist-mono)" }}>
+          {THINKING.slice(0, step + 1).map((s, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, x: -6 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.25 }}
+              className="text-xs text-neutral-500 flex items-center gap-2"
+            >
+              <span className={i === step ? "text-blue-300" : "text-neutral-700"}>{i === step ? "›" : "✓"}</span>
+              {s}
+            </motion.div>
+          ))}
+        </div>
+      )}
 
       {/* Examples */}
       {!result && !loading && (
@@ -184,12 +235,27 @@ export default function PMLens() {
             </Field>
           )}
 
-          <button
-            onClick={() => { setResult(null); setInput(""); }}
-            className="self-start text-xs text-neutral-500 hover:text-white transition-colors duration-200 mt-2"
-          >
-            ← Try another
-          </button>
+          <div className="flex flex-wrap items-center gap-5 mt-2 pt-5 border-t border-white/10">
+            <button
+              onClick={() => { setResult(null); setInput(""); }}
+              className="text-xs text-neutral-500 hover:text-white transition-colors duration-200"
+            >
+              ← Try another
+            </button>
+            <button
+              onClick={copyResult}
+              className="text-xs text-neutral-500 hover:text-white transition-colors duration-200"
+            >
+              {copied ? "Copied ✓" : "Copy result"}
+            </button>
+            <a
+              href="/valeria"
+              className="group text-xs text-blue-300/80 hover:text-blue-200 transition-colors duration-200 ml-auto"
+            >
+              This is how I&apos;d frame it. Want to talk?{" "}
+              <span className="inline-block transition-transform duration-200 group-hover:translate-x-1">→</span>
+            </a>
+          </div>
         </motion.div>
       )}
     </div>
