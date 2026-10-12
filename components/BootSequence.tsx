@@ -6,6 +6,13 @@ import { motion, AnimatePresence } from "framer-motion";
 const NAME = "Valeria";
 const CHAR_DELAY = 1200 / NAME.length; // ~1.2s total
 
+// In-memory, module-scoped: survives client-side navigation (Home ↔ Work ↔
+// ValerIA) but resets on every full page load. So the intro plays on each load
+// or refresh and for every new visitor, yet never repeats while navigating the
+// site within a single visit. (sessionStorage was the opposite: it survived
+// reloads, so a returning tab never saw the intro again.)
+let playedThisLoad = false;
+
 export default function BootSequence({ onComplete }: { onComplete: () => void }) {
   const [visible, setVisible] = useState(false);
   const [displayed, setDisplayed] = useState("");
@@ -13,13 +20,11 @@ export default function BootSequence({ onComplete }: { onComplete: () => void })
   const [show, setShow] = useState(true);
 
   useEffect(() => {
-    // Only show on first visit
-    const seen = sessionStorage.getItem("boot-seen");
-    if (seen) {
+    if (playedThisLoad) {
       onComplete();
       return;
     }
-    sessionStorage.setItem("boot-seen", "1");
+    playedThisLoad = true;
     setVisible(true);
   }, [onComplete]);
 
