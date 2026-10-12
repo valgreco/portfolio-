@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
 const NAME = "Valeria";
@@ -47,14 +48,17 @@ export default function BootSequence({ onComplete }: { onComplete: () => void })
     return () => clearInterval(interval);
   }, [visible]);
 
-  if (!visible) return null;
+  if (!visible || typeof document === "undefined") return null;
 
-  return (
+  // Portal to <body> so the overlay escapes the page-transition wrapper
+  // (app/template.tsx), whose transform/filter would otherwise break this
+  // fixed overlay's positioning and push the text off-screen.
+  return createPortal(
     <AnimatePresence onExitComplete={onComplete}>
       {show && (
         <motion.div
           key="boot"
-          className="fixed inset-0 z-50 flex items-center justify-center bg-[#141414]"
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-[#141414]"
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.4, ease: "easeInOut" }}
@@ -70,6 +74,7 @@ export default function BootSequence({ onComplete }: { onComplete: () => void })
           </span>
         </motion.div>
       )}
-    </AnimatePresence>
+    </AnimatePresence>,
+    document.body
   );
 }
