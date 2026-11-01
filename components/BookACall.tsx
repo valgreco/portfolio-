@@ -113,13 +113,13 @@ export default function BookACall() {
             </div>
           )}
 
-          <div className="flex-1 min-w-0 text-xs leading-[1.8] text-neutral-500 break-words" style={{ fontFamily: "var(--font-geist-mono)" }}>
+          <div className="flex-1 min-w-0 text-xs leading-[1.8] text-neutral-400 break-words" style={{ fontFamily: "var(--font-geist-mono)" }}>
             <div className="flex gap-2">
-              <span className="text-neutral-700 w-14 shrink-0">To:</span>
+              <span className="text-neutral-400 w-14 shrink-0">To:</span>
               <span className="text-neutral-400 min-w-0 break-all">Valeria Greco</span>
             </div>
             <div className="flex gap-2">
-              <span className="text-neutral-700 w-14 shrink-0">Subject:</span>
+              <span className="text-neutral-400 w-14 shrink-0">Subject:</span>
               <motion.span
                 key={subjectLine}
                 className="text-neutral-400 min-w-0 break-words"
@@ -130,10 +130,10 @@ export default function BookACall() {
                 {subjectLine}
               </motion.span>
             </div>
-            <div className="mt-2 text-neutral-700">Hi Valeria,</div>
+            <div className="mt-2 text-neutral-400">Hi Valeria,</div>
             <motion.div
               key={bodyLine}
-              className="text-neutral-700"
+              className="text-neutral-400"
               initial={{ opacity: 0.5 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.2 }}

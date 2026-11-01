@@ -43,7 +43,7 @@ export default function Hero({ visible }: { visible: boolean }) {
         {/* Nickname */}
         <motion.div
           {...fadeIn(0.2, visible)}
-          className="flex items-center gap-2 text-base text-neutral-500 mt-3"
+          className="flex items-center gap-2 text-base text-neutral-400 mt-3"
         >
           <span style={{ fontFamily: "var(--font-instrument-serif)", fontStyle: "italic" }}>
             Lera to friends
@@ -73,7 +73,7 @@ export default function Hero({ visible }: { visible: boolean }) {
         {/* Subtitle */}
         <motion.p
           {...fadeIn(0.5, visible)}
-          className="max-w-[600px] text-base leading-7 text-[#f5f5f5]/50 mt-5"
+          className="max-w-[600px] text-base leading-7 text-[#f5f5f5]/75 mt-5"
         >
           Product manager focused on discovery and zero-to-one delivery, across products and markets.
           First PM at a European fintech, close to the technical detail, shipping products end to end.

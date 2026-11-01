@@ -46,7 +46,7 @@ function TerminalBoot({ onDone }: { onDone: () => void }) {
         <motion.div
           exit={{ opacity: 0 }}
           transition={{ duration: 0.4 }}
-          className="mb-6 font-mono text-xs text-neutral-500 space-y-1"
+          className="mb-6 font-mono text-xs text-neutral-400 space-y-1"
           style={{ fontFamily: "var(--font-geist-mono)" }}
         >
           {lines.map((line, i) => (
@@ -84,10 +84,10 @@ function TraceLine({ done, children }: { done: boolean; children: React.ReactNod
       initial={{ opacity: 0, x: -6 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.25 }}
-      className="flex items-center gap-2 text-[11px] text-neutral-500"
+      className="flex items-center gap-2 text-[11px] text-neutral-400"
       style={{ fontFamily: "var(--font-geist-mono)" }}
     >
-      <span className={done ? "text-neutral-600" : "text-blue-300"}>{done ? "✓" : "›"}</span>
+      <span className={done ? "text-neutral-400" : "text-blue-300"}>{done ? "✓" : "›"}</span>
       {children}
     </motion.div>
   );
@@ -268,7 +268,7 @@ export default function ValerIAPage() {
                   </div>
                   {m.sources && m.sources.length > 0 && (
                     <div className="flex items-center gap-2 flex-wrap pt-1">
-                      <span className="text-[11px] text-neutral-600" style={{ fontFamily: "var(--font-geist-mono)" }}>
+                      <span className="text-[11px] text-neutral-400" style={{ fontFamily: "var(--font-geist-mono)" }}>
                         sourced from
                       </span>
                       <SourceChips sources={m.sources} />
@@ -292,7 +292,7 @@ export default function ValerIAPage() {
                   {mach.resolved &&
                     (sources && sources.length > 0 ? (
                       <div className="flex items-start gap-2 text-[11px]" style={{ fontFamily: "var(--font-geist-mono)" }}>
-                        <span className="text-neutral-600 mt-1">✓ found in</span>
+                        <span className="text-neutral-400 mt-1">✓ found in</span>
                         <SourceChips sources={sources} />
                       </div>
                     ) : (
@@ -332,7 +332,7 @@ export default function ValerIAPage() {
               transition={{ duration: 0.8, repeat: loading ? Infinity : 0 }}
             />
             <span
-              className="text-[11px] text-neutral-600"
+              className="text-[11px] text-neutral-400"
               style={{ fontFamily: "var(--font-geist-mono)" }}
             >
               {loading ? "Thinking..." : "Ready to answer"}
@@ -364,7 +364,7 @@ export default function ValerIAPage() {
 
         {/* How ValerIA is built */}
         <div className="mt-24 pt-10 border-t border-white/10">
-          <p className="text-xs tracking-widest text-neutral-600 uppercase mb-5" style={{ fontFamily: "var(--font-geist-mono)" }}>
+          <p className="text-xs tracking-widest text-neutral-400 uppercase mb-5" style={{ fontFamily: "var(--font-geist-mono)" }}>
             How she&apos;s built
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-8">
@@ -375,7 +375,7 @@ export default function ValerIAPage() {
             ].map((c) => (
               <div key={c.k}>
                 <p className="text-sm text-white mb-1">{c.k}</p>
-                <p className="text-xs text-neutral-500 leading-6">{c.v}</p>
+                <p className="text-xs text-neutral-400 leading-6">{c.v}</p>
               </div>
             ))}
           </div>
@@ -384,7 +384,7 @@ export default function ValerIAPage() {
               <span className="text-3xl text-white" style={{ fontFamily: "var(--font-geist-mono)" }}>30</span>
               <span className="text-sm text-neutral-400">eval questions she&apos;s tested against, written before tuning.</span>
             </div>
-            <p className="text-xs text-neutral-500 leading-7">
+            <p className="text-xs text-neutral-400 leading-7">
               Every change to her prompt runs against this suite, so she stays accurate as I improve her.
               The ones she can&apos;t answer become new content and new tests. A few of them:
             </p>
@@ -395,7 +395,7 @@ export default function ValerIAPage() {
                 "What does she do right now?",
                 "What languages does she speak?",
               ].map((q) => (
-                <span key={q} className="text-xs text-neutral-500 border border-white/10 rounded-full px-3 py-1.5">
+                <span key={q} className="text-xs text-neutral-400 border border-white/10 rounded-full px-3 py-1.5">
                   {q}
                 </span>
               ))}

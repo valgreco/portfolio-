@@ -30,7 +30,7 @@ const otherCards = [
 export default function BuildingWithAI() {
   return (
     <section className="w-full max-w-6xl mx-auto px-6 py-24">
-      <p className="text-xs tracking-widest text-neutral-600 uppercase mb-3">Building with AI</p>
+      <p className="text-xs tracking-widest text-neutral-400 uppercase mb-3">Building with AI</p>
       <h2
         className="text-4xl md:text-5xl text-white mb-12 leading-tight"
         style={{ fontFamily: "var(--font-instrument-serif)", fontStyle: "italic" }}
@@ -45,14 +45,14 @@ export default function BuildingWithAI() {
           className="group relative rounded-3xl bg-[#1c1c1c] border border-white/5 overflow-hidden flex flex-col justify-between min-h-[480px] hover:border-white/10 transition-colors duration-300"
         >
           <div className="relative z-10 p-7">
-            <p className="text-xs tracking-widest text-neutral-600 uppercase mb-2">Agent</p>
+            <p className="text-xs tracking-widest text-neutral-400 uppercase mb-2">Agent</p>
             <h3
               className="text-3xl text-white mb-2"
               style={{ fontFamily: "var(--font-instrument-serif)", fontStyle: "italic" }}
             >
               ValerIA
             </h3>
-            <p className="text-sm text-neutral-500 max-w-xs">
+            <p className="text-sm text-neutral-400 max-w-xs">
               My AI agent. Answers recruiters and mentors about my work, how I think, and what I've built.
             </p>
           </div>
@@ -71,7 +71,7 @@ export default function BuildingWithAI() {
 
           {/* bottom CTA */}
           <div className="relative z-10 px-7 pb-6 pt-2">
-            <span className="text-sm text-neutral-500 group-hover:text-white transition-colors duration-200">
+            <span className="text-sm text-neutral-400 group-hover:text-white transition-colors duration-200">
               Talk to ValerIA →
             </span>
           </div>
@@ -102,8 +102,8 @@ export default function BuildingWithAI() {
                   </span>
                 )}
               </div>
-              <p className="text-sm text-neutral-500">{card.description}</p>
-              <span className="text-xs text-neutral-600 group-hover:text-white transition-colors duration-200 mt-1">
+              <p className="text-sm text-neutral-400">{card.description}</p>
+              <span className="text-xs text-neutral-400 group-hover:text-white transition-colors duration-200 mt-1">
                 {card.live ? "Try it →" : "Read more →"}
               </span>
             </Link>

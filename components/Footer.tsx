@@ -11,7 +11,7 @@ export default function Footer() {
       >
         Let&apos;s talk.
       </p>
-      <p className="text-sm text-neutral-500 mb-6">
+      <p className="text-sm text-neutral-400 mb-6">
         Product manager based in Madrid.
       </p>
 
@@ -38,7 +38,7 @@ export default function Footer() {
         </a>
       </div>
 
-      <p className="text-xs text-neutral-700 mt-12">© {new Date().getFullYear()} Valeria Greco</p>
+      <p className="text-xs text-neutral-400 mt-12">© {new Date().getFullYear()} Valeria Greco</p>
     </footer>
   );
 }

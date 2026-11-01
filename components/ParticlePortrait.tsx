@@ -63,7 +63,7 @@ export default function ParticlePortrait() {
 
       {/* Status label */}
       <motion.p
-        className="absolute text-[10px] tracking-[0.25em] text-white/40 uppercase"
+        className="absolute text-[10px] tracking-[0.25em] text-white/60 uppercase"
         style={{ bottom: "13%", fontFamily: "var(--font-geist-mono)" }}
         {...(!reduced ? {
           animate: { opacity: [0.3, 0.7, 0.3] },
