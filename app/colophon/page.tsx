@@ -74,6 +74,16 @@ export default function ColophonPage() {
           the shape of it.
         </p>
 
+        <a
+          href="https://github.com/valgreco/portfolio-"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 text-sm text-blue-300/90 hover:text-blue-200 border border-blue-300/25 hover:border-blue-300/50 rounded-full px-4 py-2 mb-12 transition-colors"
+        >
+          View source on GitHub
+          <span>&rarr;</span>
+        </a>
+
         <div className="rounded-2xl bg-[#161616] border border-white/5 p-6 mb-14">
           <Diagram />
         </div>
