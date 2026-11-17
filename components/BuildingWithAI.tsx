@@ -20,10 +20,10 @@ const otherCards = [
     live: false,
   },
   {
-    title: "Bug Triage Agent",
-    description: "Automated bug prioritization that classifies reports and files Jira and Notion tickets via Claude.",
-    href: "/tools/bug-triage",
-    live: false,
+    title: "Roadmap tool",
+    description: "The interactive timeline roadmap I built and run at STAMP — owners, sprints, themes, two-way Jira sync. Recreated here with placeholder data.",
+    href: "/tools/roadmap",
+    live: true,
   },
 ];
 
