@@ -42,8 +42,8 @@ export default function EasterEgg() {
           className="fixed bottom-8 left-1/2 -translate-x-1/2 z-[120] rounded-xl border border-white/10 px-5 py-3"
           style={{ background: "#1c1c1c", boxShadow: "0 12px 40px rgba(0,0,0,0.5)", fontFamily: "var(--font-geist-mono)" }}
         >
-          <p className="text-xs text-neutral-400">
-            <span className="text-neutral-400">$</span> friend request accepted.{" "}
+          <p className="text-xs text-neutral-300">
+            <span className="text-neutral-300">$</span> friend request accepted.{" "}
             <span className="text-white">Now go hire Lera.</span>
           </p>
         </motion.div>

@@ -3,7 +3,7 @@
 export default function OffTheClock() {
   return (
     <section className="w-full max-w-6xl mx-auto px-6 py-24">
-      <p className="text-xs tracking-widest text-neutral-400 uppercase mb-3">Beyond the CV</p>
+      <p className="text-xs tracking-widest text-neutral-300 uppercase mb-3">Beyond the CV</p>
       <h2
         className="text-4xl md:text-5xl text-white mb-10 leading-tight"
         style={{ fontFamily: "var(--font-instrument-serif)", fontStyle: "italic" }}

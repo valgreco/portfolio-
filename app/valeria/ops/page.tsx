@@ -39,13 +39,13 @@ export default async function OpsPage() {
   return (
     <main className="min-h-screen flex flex-col items-center px-6 pt-28 pb-24" style={{ background: "#141414" }}>
       <div className="w-full max-w-4xl">
-        <p className="text-xs tracking-widest text-neutral-400 uppercase mb-3" style={{ fontFamily: "var(--font-geist-mono)" }}>
+        <p className="text-xs tracking-widest text-neutral-300 uppercase mb-3" style={{ fontFamily: "var(--font-geist-mono)" }}>
           ValerIA · Ops
         </p>
         <h1 className="text-4xl md:text-5xl text-white leading-tight" style={{ fontFamily: "var(--font-instrument-serif)", fontStyle: "italic" }}>
           How I keep my agent honest.
         </h1>
-        <p className="max-w-2xl text-sm md:text-base text-neutral-400 leading-7 mt-6 mb-12">
+        <p className="max-w-2xl text-sm md:text-base text-neutral-300 leading-7 mt-6 mb-12">
           Shipping an AI agent is the easy part. Operating it is the job: I log every real question ValerIA gets,
           track whether my own writing actually grounded the answer, and turn the gaps into new content and new
           eval cases. This is that loop, live.
@@ -61,7 +61,7 @@ export default async function OpsPage() {
 
         {/* The loop */}
         <div className="rounded-2xl bg-[#1c1c1c] border border-white/5 p-6 mb-12">
-          <p className="text-xs tracking-widest text-neutral-400 uppercase mb-5" style={{ fontFamily: "var(--font-geist-mono)" }}>
+          <p className="text-xs tracking-widest text-neutral-300 uppercase mb-5" style={{ fontFamily: "var(--font-geist-mono)" }}>
             The loop
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-4 gap-5">
@@ -71,20 +71,20 @@ export default async function OpsPage() {
                   <span className="text-[11px] text-blue-300/80" style={{ fontFamily: "var(--font-geist-mono)" }}>{i + 1}</span>
                   <span className="text-sm text-white">{s.k}</span>
                 </div>
-                <p className="text-xs text-neutral-400 leading-6">{s.v}</p>
+                <p className="text-xs text-neutral-300 leading-6">{s.v}</p>
               </div>
             ))}
           </div>
         </div>
 
         {!stats.configured ? (
-          <div className="rounded-2xl border border-white/10 bg-[#161616] p-6 text-sm text-neutral-400 leading-7">
+          <div className="rounded-2xl border border-white/10 bg-[#161616] p-6 text-sm text-neutral-300 leading-7">
             <span className="text-neutral-200">Live logging isn&apos;t connected yet.</span> The loop above is how it
             works; once the datastore is enabled, this page fills with the real questions ValerIA is being asked and
             the gaps they reveal.
           </div>
         ) : stats.recent.length === 0 ? (
-          <div className="rounded-2xl border border-white/10 bg-[#161616] p-6 text-sm text-neutral-400 leading-7">
+          <div className="rounded-2xl border border-white/10 bg-[#161616] p-6 text-sm text-neutral-300 leading-7">
             Connected and listening — waiting for the first questions. Go{" "}
             <a href="/valeria" className="text-blue-300/90 hover:text-blue-200 underline underline-offset-2">ask ValerIA something</a>,
             then refresh.
@@ -93,7 +93,7 @@ export default async function OpsPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Content gaps */}
             <div>
-              <p className="text-xs tracking-widest text-neutral-400 uppercase mb-4" style={{ fontFamily: "var(--font-geist-mono)" }}>
+              <p className="text-xs tracking-widest text-neutral-300 uppercase mb-4" style={{ fontFamily: "var(--font-geist-mono)" }}>
                 Content gaps → write next
               </p>
               {gapQuestions.length === 0 ? (
@@ -111,7 +111,7 @@ export default async function OpsPage() {
 
             {/* Recent questions */}
             <div>
-              <p className="text-xs tracking-widest text-neutral-400 uppercase mb-4" style={{ fontFamily: "var(--font-geist-mono)" }}>
+              <p className="text-xs tracking-widest text-neutral-300 uppercase mb-4" style={{ fontFamily: "var(--font-geist-mono)" }}>
                 Recent questions
               </p>
               <div className="flex flex-col divide-y divide-white/5">

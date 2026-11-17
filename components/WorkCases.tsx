@@ -94,7 +94,7 @@ function Step({ label, text }: { label: string; text: string }) {
           {label}
         </span>
       </div>
-      <p className="text-sm text-neutral-400 leading-7">{text}</p>
+      <p className="text-sm text-neutral-300 leading-7">{text}</p>
     </div>
   );
 }
@@ -104,14 +104,14 @@ export default function WorkCases() {
     <div className="w-full">
       {/* Section intro */}
       <Reveal>
-        <p className="text-xs tracking-widest text-neutral-400 uppercase mb-3">My product work at STAMP</p>
+        <p className="text-xs tracking-widest text-neutral-300 uppercase mb-3">My product work at STAMP</p>
         <h2
           className="text-4xl md:text-5xl text-white leading-tight"
           style={{ fontFamily: "var(--font-instrument-serif)", fontStyle: "italic" }}
         >
           Deeds, not words.
         </h2>
-        <p className="max-w-2xl text-sm text-neutral-400 leading-7 mt-6">
+        <p className="max-w-2xl text-sm text-neutral-300 leading-7 mt-6">
           This is the work I&apos;m living now: two years owning payments, onboarding and compliance as
           the first PM at STAMP, a European fintech. Each of these started as a problem worth framing
           before it was a thing to build.
@@ -127,7 +127,7 @@ export default function WorkCases() {
               className="text-4xl md:text-5xl text-white mb-2"
               style={{ fontFamily: "var(--font-geist-mono)" }}
             />
-            <div className="text-xs text-neutral-400 leading-5">{s.label}</div>
+            <div className="text-xs text-neutral-300 leading-5">{s.label}</div>
           </StaggerItem>
         ))}
       </Stagger>
@@ -139,7 +139,7 @@ export default function WorkCases() {
             <div className="border-t border-white/10 pt-10">
               <div className="flex items-center gap-3 mb-5">
                 <GlassIcon name={c.icon} />
-                <span className="text-xs tracking-widest text-neutral-400 uppercase">{c.tag}</span>
+                <span className="text-xs tracking-widest text-neutral-300 uppercase">{c.tag}</span>
               </div>
               <h3 className="text-xl md:text-2xl text-white leading-snug max-w-2xl mb-8">
                 {c.headline}

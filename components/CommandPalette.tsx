@@ -102,7 +102,7 @@ export default function CommandPalette() {
         />
         <ul className="max-h-[320px] overflow-y-auto py-2">
           {filtered.length === 0 && (
-            <li className="px-5 py-3 text-sm text-neutral-400">No matches.</li>
+            <li className="px-5 py-3 text-sm text-neutral-300">No matches.</li>
           )}
           {filtered.map((i, idx) => (
             <li key={i.label}>
@@ -114,12 +114,12 @@ export default function CommandPalette() {
                 }`}
               >
                 <span className="text-sm text-[#f5f5f5]">{i.label}</span>
-                <span className="text-xs text-neutral-400">{i.hint}</span>
+                <span className="text-xs text-neutral-300">{i.hint}</span>
               </button>
             </li>
           ))}
         </ul>
-        <div className="px-5 py-2.5 border-t border-white/10 flex items-center gap-3 text-[11px] text-neutral-400" style={{ fontFamily: "var(--font-geist-mono)" }}>
+        <div className="px-5 py-2.5 border-t border-white/10 flex items-center gap-3 text-[11px] text-neutral-300" style={{ fontFamily: "var(--font-geist-mono)" }}>
           <span>↑↓ navigate</span>
           <span>↵ open</span>
           <span>esc close</span>

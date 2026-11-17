@@ -191,7 +191,7 @@ export default function WorldMap({ onSelectCity }: { onSelectCity?: (city: strin
             transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
           />
           <span
-            className="text-[11px] tracking-widest text-neutral-400 uppercase"
+            className="text-[11px] tracking-widest text-neutral-300 uppercase"
             style={{ fontFamily: "var(--font-geist-mono)" }}
           >
             Tap a city to explore
@@ -206,7 +206,7 @@ export default function WorldMap({ onSelectCity }: { onSelectCity?: (city: strin
               className={`text-sm px-3 py-1.5 rounded-full border transition-colors duration-200 ${
                 selected === i
                   ? "border-white/40 text-white bg-white/5"
-                  : "border-white/10 text-neutral-400 hover:text-neutral-300 hover:border-white/20"
+                  : "border-white/10 text-neutral-300 hover:text-neutral-300 hover:border-white/20"
               }`}
             >
               {p.city}
@@ -220,7 +220,7 @@ export default function WorldMap({ onSelectCity }: { onSelectCity?: (city: strin
                 key="empty"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                className="text-sm text-neutral-400 leading-7 max-w-md"
+                className="text-sm text-neutral-300 leading-7 max-w-md"
               >
                 Six countries, one career. Tap a location to see what happened there.
               </motion.p>
@@ -238,7 +238,7 @@ export default function WorldMap({ onSelectCity }: { onSelectCity?: (city: strin
                   >
                     {PLACES[selected].city}
                   </h3>
-                  <span className="text-xs text-neutral-400" style={{ fontFamily: "var(--font-geist-mono)" }}>
+                  <span className="text-xs text-neutral-300" style={{ fontFamily: "var(--font-geist-mono)" }}>
                     {PLACES[selected].year}
                   </span>
                 </div>
@@ -257,13 +257,13 @@ export default function WorldMap({ onSelectCity }: { onSelectCity?: (city: strin
                 ) : (
                   <p className="text-base text-white mb-1">{PLACES[selected].company}</p>
                 )}
-                <p className="text-xs text-neutral-400 mb-4">{PLACES[selected].role}</p>
+                <p className="text-xs text-neutral-300 mb-4">{PLACES[selected].role}</p>
 
                 {/* Bullets */}
                 <ul className="flex flex-col gap-2 max-w-md">
                   {PLACES[selected].bullets.map((b, bi) => (
-                    <li key={bi} className="flex gap-2 text-sm text-neutral-400 leading-6">
-                      <span className="text-neutral-400 mt-0.5">·</span>
+                    <li key={bi} className="flex gap-2 text-sm text-neutral-300 leading-6">
+                      <span className="text-neutral-300 mt-0.5">·</span>
                       <span>{b}</span>
                     </li>
                   ))}

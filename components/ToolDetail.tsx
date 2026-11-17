@@ -21,7 +21,7 @@ function Block({ label, text }: { label: string; text: string }) {
       >
         {label}
       </p>
-      <p className="text-sm text-neutral-400 leading-7 max-w-2xl">{text}</p>
+      <p className="text-sm text-neutral-300 leading-7 max-w-2xl">{text}</p>
     </div>
   );
 }
@@ -39,14 +39,14 @@ export default function ToolDetail({
     <main className="min-h-screen flex flex-col items-center px-6 pt-28 pb-24" style={{ background: "#141414" }}>
       <div className="w-full max-w-3xl">
         <Reveal>
-          <p className="text-xs tracking-widest text-neutral-400 uppercase mb-3">{eyebrow}</p>
+          <p className="text-xs tracking-widest text-neutral-300 uppercase mb-3">{eyebrow}</p>
           <h1
             className="text-4xl md:text-5xl text-white leading-tight"
             style={{ fontFamily: "var(--font-instrument-serif)", fontStyle: "italic" }}
           >
             {title}
           </h1>
-          <p className="max-w-2xl text-sm text-neutral-400 leading-7 mt-6">{intro}</p>
+          <p className="max-w-2xl text-sm text-neutral-300 leading-7 mt-6">{intro}</p>
         </Reveal>
 
         {stat && (
@@ -58,7 +58,7 @@ export default function ToolDetail({
               >
                 {stat.value}
               </div>
-              <div className="text-xs text-neutral-400">{stat.label}</div>
+              <div className="text-xs text-neutral-300">{stat.label}</div>
             </div>
           </Reveal>
         )}

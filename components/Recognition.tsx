@@ -21,7 +21,7 @@ const ITEMS = [
 export default function Recognition() {
   return (
     <div className="w-full">
-      <p className="text-xs tracking-widest text-neutral-400 uppercase mb-3">Recognition</p>
+      <p className="text-xs tracking-widest text-neutral-300 uppercase mb-3">Recognition</p>
       <h2
         className="text-4xl md:text-5xl text-white mb-12 leading-tight"
         style={{ fontFamily: "var(--font-instrument-serif)", fontStyle: "italic" }}
@@ -39,11 +39,11 @@ export default function Recognition() {
               >
                 {item.title}
               </h3>
-              <span className="text-xs text-neutral-400" style={{ fontFamily: "var(--font-geist-mono)" }}>
+              <span className="text-xs text-neutral-300" style={{ fontFamily: "var(--font-geist-mono)" }}>
                 {item.year}
               </span>
             </div>
-            <p className="text-sm text-neutral-400 leading-6">{item.detail}</p>
+            <p className="text-sm text-neutral-300 leading-6">{item.detail}</p>
           </div>
         ))}
       </div>

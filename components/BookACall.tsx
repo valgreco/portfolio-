@@ -113,16 +113,16 @@ export default function BookACall() {
             </div>
           )}
 
-          <div className="flex-1 min-w-0 text-xs leading-[1.8] text-neutral-400 break-words" style={{ fontFamily: "var(--font-geist-mono)" }}>
+          <div className="flex-1 min-w-0 text-xs leading-[1.8] text-neutral-300 break-words" style={{ fontFamily: "var(--font-geist-mono)" }}>
             <div className="flex gap-2">
-              <span className="text-neutral-400 w-14 shrink-0">To:</span>
-              <span className="text-neutral-400 min-w-0 break-all">Valeria Greco</span>
+              <span className="text-neutral-300 w-14 shrink-0">To:</span>
+              <span className="text-neutral-300 min-w-0 break-all">Valeria Greco</span>
             </div>
             <div className="flex gap-2">
-              <span className="text-neutral-400 w-14 shrink-0">Subject:</span>
+              <span className="text-neutral-300 w-14 shrink-0">Subject:</span>
               <motion.span
                 key={subjectLine}
-                className="text-neutral-400 min-w-0 break-words"
+                className="text-neutral-300 min-w-0 break-words"
                 initial={{ opacity: 0.5 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.2 }}
@@ -130,10 +130,10 @@ export default function BookACall() {
                 {subjectLine}
               </motion.span>
             </div>
-            <div className="mt-2 text-neutral-400">Hi Valeria,</div>
+            <div className="mt-2 text-neutral-300">Hi Valeria,</div>
             <motion.div
               key={bodyLine}
-              className="text-neutral-400"
+              className="text-neutral-300"
               initial={{ opacity: 0.5 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.2 }}
@@ -148,7 +148,7 @@ export default function BookACall() {
           <motion.p
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-sm text-neutral-400"
+            className="text-sm text-neutral-300"
             style={{ fontFamily: "var(--font-geist-mono)" }}
           >
             &gt; Email client opened. Hit send when you&apos;re ready. Valeria is looking forward to it!

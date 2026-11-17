@@ -11,7 +11,7 @@ export default function Footer() {
       >
         Let&apos;s talk.
       </p>
-      <p className="text-sm text-neutral-400 mb-6">
+      <p className="text-sm text-neutral-300 mb-6">
         Product manager based in Madrid.
       </p>
 
@@ -21,7 +21,7 @@ export default function Footer() {
           target="_blank"
           rel="noopener noreferrer"
           onClick={() => track("linkedin_click")}
-          className="group text-neutral-400 hover:text-white transition-colors duration-200"
+          className="group text-neutral-300 hover:text-white transition-colors duration-200"
         >
           LinkedIn{" "}
           <span className="inline-block transition-transform duration-200 group-hover:translate-x-1">↗</span>
@@ -31,14 +31,14 @@ export default function Footer() {
           target="_blank"
           rel="noopener noreferrer"
           onClick={() => track("substack_click")}
-          className="group text-neutral-400 hover:text-white transition-colors duration-200"
+          className="group text-neutral-300 hover:text-white transition-colors duration-200"
         >
           Substack{" "}
           <span className="inline-block transition-transform duration-200 group-hover:translate-x-1">↗</span>
         </a>
       </div>
 
-      <p className="text-xs text-neutral-400 mt-12">© {new Date().getFullYear()} Valeria Greco</p>
+      <p className="text-xs text-neutral-300 mt-12">© {new Date().getFullYear()} Valeria Greco</p>
     </footer>
   );
 }

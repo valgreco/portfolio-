@@ -175,7 +175,7 @@ export default function RoadmapDemo() {
             <button
               key={g}
               onClick={() => setGroupBy(g)}
-              className={`px-3 py-1.5 transition-colors ${groupBy === g ? "bg-white/10 text-white" : "text-neutral-400 hover:text-white"}`}
+              className={`px-3 py-1.5 transition-colors ${groupBy === g ? "bg-white/10 text-white" : "text-neutral-300 hover:text-white"}`}
             >
               By {g}
             </button>
@@ -251,7 +251,7 @@ export default function RoadmapDemo() {
             <div key={label}>
               <div className="flex items-center gap-2 px-3 py-1.5 bg-white/[0.02] border-b border-white/5">
                 {groupBy === "theme" && <span className="w-2 h-2 rounded-sm" style={{ background: THEME_COLOR[label] ?? "#777" }} />}
-                <span className="text-[11px] tracking-wide uppercase text-neutral-400" style={{ fontFamily: "var(--font-geist-mono)" }}>
+                <span className="text-[11px] tracking-wide uppercase text-neutral-300" style={{ fontFamily: "var(--font-geist-mono)" }}>
                   {label}
                 </span>
               </div>
@@ -406,7 +406,7 @@ function AddItemForm({ onAdd, onCancel }: { onAdd: (i: Item) => void; onCancel: 
       </div>
       <div className="flex gap-2">
         <button onClick={save} className="text-xs text-[#0c0c0c] bg-emerald-400 hover:bg-emerald-300 rounded-lg px-3 py-1.5 font-medium transition-colors">Save</button>
-        <button onClick={onCancel} className="text-xs text-neutral-400 hover:text-white rounded-lg px-2 py-1.5 transition-colors">Cancel</button>
+        <button onClick={onCancel} className="text-xs text-neutral-300 hover:text-white rounded-lg px-2 py-1.5 transition-colors">Cancel</button>
       </div>
     </div>
   );

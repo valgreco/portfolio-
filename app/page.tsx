@@ -24,7 +24,7 @@ export default function Home() {
       <Reveal><OffTheClock /></Reveal>
       <Reveal>
         <section className="w-full max-w-6xl mx-auto px-6 py-24">
-          <p className="text-xs tracking-widest text-neutral-400 uppercase mb-3">Contact</p>
+          <p className="text-xs tracking-widest text-neutral-300 uppercase mb-3">Contact</p>
           <h2
             className="text-4xl md:text-5xl text-white mb-12 leading-tight"
             style={{ fontFamily: "var(--font-instrument-serif)", fontStyle: "italic" }}

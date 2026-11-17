@@ -64,10 +64,10 @@ export default function DownloadCV() {
               <line x1="18" y1="32" x2="43" y2="32" stroke="white" strokeOpacity="0.12" strokeWidth="1" />
             </svg>
           </div>
-          <div className="flex-1 min-w-0 text-xs leading-[1.8] text-neutral-400" style={{ fontFamily: "var(--font-geist-mono)" }}>
-            <div className="text-neutral-400">valeria-greco-cv.pdf</div>
-            <div className="text-neutral-400">Product Manager</div>
-            <div className="text-neutral-400 mt-2">PDF · 1 page</div>
+          <div className="flex-1 min-w-0 text-xs leading-[1.8] text-neutral-300" style={{ fontFamily: "var(--font-geist-mono)" }}>
+            <div className="text-neutral-300">valeria-greco-cv.pdf</div>
+            <div className="text-neutral-300">Product Manager</div>
+            <div className="text-neutral-300 mt-2">PDF · 1 page</div>
           </div>
         </div>
 
@@ -75,14 +75,14 @@ export default function DownloadCV() {
           <motion.p
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-sm text-neutral-400"
+            className="text-sm text-neutral-300"
             style={{ fontFamily: "var(--font-geist-mono)" }}
           >
             &gt; Download started. Thanks for stopping by!
           </motion.p>
         ) : (
           <form onSubmit={handleSubmit} className="flex flex-col gap-6 flex-1">
-            <p className="text-sm text-neutral-400">
+            <p className="text-sm text-neutral-300">
               A couple of details and the PDF is yours.
             </p>
             <input

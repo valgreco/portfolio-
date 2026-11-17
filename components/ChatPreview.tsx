@@ -97,7 +97,7 @@ export default function ChatPreview() {
             <img src="/valeria.jpg" alt="" className="w-full h-full object-cover" style={{ objectPosition: "center 10%" }} />
           </div>
           <p
-            className="text-xs text-neutral-400 leading-5 max-w-[85%]"
+            className="text-xs text-neutral-300 leading-5 max-w-[85%]"
             style={{ fontFamily: "var(--font-geist-sans)", minHeight: 20 }}
           >
             {answer}

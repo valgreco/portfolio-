@@ -46,14 +46,14 @@ function StatusChip({ status }: { status: Bet["status"] }) {
 export default function BuildingNow() {
   return (
     <section className="w-full max-w-6xl mx-auto px-6 py-24">
-      <p className="text-xs tracking-widest text-neutral-400 uppercase mb-3">Building now</p>
+      <p className="text-xs tracking-widest text-neutral-300 uppercase mb-3">Building now</p>
       <h2
         className="text-4xl md:text-5xl text-white mb-4 leading-tight"
         style={{ fontFamily: "var(--font-instrument-serif)", fontStyle: "italic" }}
       >
         On the bench.
       </h2>
-      <p className="max-w-2xl text-sm text-neutral-400 leading-7 mb-12">
+      <p className="max-w-2xl text-sm text-neutral-300 leading-7 mb-12">
         Live bets I&apos;m building right now, with honest status. This is the part that dates fast &mdash;
         which is the point: I&apos;m always shipping with AI, not just talking about it.
       </p>
@@ -71,12 +71,12 @@ export default function BuildingNow() {
                 </h3>
                 <StatusChip status={bet.status} />
               </div>
-              <p className="text-sm text-neutral-400 leading-7">{bet.blurb}</p>
+              <p className="text-sm text-neutral-300 leading-7">{bet.blurb}</p>
               <div className="flex flex-wrap gap-2 mt-auto pt-2">
                 {bet.stack.map((s) => (
                   <span
                     key={s}
-                    className="text-[11px] text-neutral-400 border border-white/10 rounded-full px-2.5 py-1"
+                    className="text-[11px] text-neutral-300 border border-white/10 rounded-full px-2.5 py-1"
                     style={{ fontFamily: "var(--font-geist-mono)" }}
                   >
                     {s}
@@ -84,7 +84,7 @@ export default function BuildingNow() {
                 ))}
               </div>
               {bet.href && (
-                <span className="text-xs text-neutral-400 group-hover:text-white transition-colors duration-200">
+                <span className="text-xs text-neutral-300 group-hover:text-white transition-colors duration-200">
                   See the tool &rarr;
                 </span>
               )}

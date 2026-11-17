@@ -13,14 +13,14 @@ export default function WorkPage() {
   return (
     <main className="min-h-screen flex flex-col items-center px-6 pt-28 pb-12" style={{ background: "#141414" }}>
       <div className="w-full max-w-6xl">
-        <p className="text-xs tracking-widest text-neutral-400 uppercase mb-3">See the work</p>
+        <p className="text-xs tracking-widest text-neutral-300 uppercase mb-3">See the work</p>
         <h1
           className="text-4xl md:text-5xl text-white mb-5 leading-tight"
           style={{ fontFamily: "var(--font-instrument-serif)", fontStyle: "italic" }}
         >
           Six countries, one map.
         </h1>
-        <p className="max-w-2xl text-sm md:text-base text-neutral-400 leading-7 mb-14">
+        <p className="max-w-2xl text-sm md:text-base text-neutral-300 leading-7 mb-14">
           A product career built across Europe: from marketing and consulting at Amazon, Bosch and
           Wayra to first PM at STAMP. Tap a country to see what I did there.
         </p>

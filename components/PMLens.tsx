@@ -28,7 +28,7 @@ function Field({ icon: Icon, label, children }: { icon: React.ElementType; label
         <span className="flex items-center justify-center w-6 h-6 rounded-lg border border-white/10 bg-white/[0.03] text-blue-300/80">
           <Icon size={13} strokeWidth={1.8} aria-hidden="true" />
         </span>
-        <p className="text-xs tracking-widest text-neutral-400 uppercase" style={{ fontFamily: "var(--font-geist-mono)" }}>
+        <p className="text-xs tracking-widest text-neutral-300 uppercase" style={{ fontFamily: "var(--font-geist-mono)" }}>
           {label}
         </p>
       </div>
@@ -41,7 +41,7 @@ function priorityStyle(call: string) {
   const c = call.toLowerCase();
   if (c.includes("now")) return "text-blue-200 bg-blue-500/20 border-blue-400/40";
   if (c.includes("next")) return "text-neutral-200 bg-white/[0.06] border-white/20";
-  return "text-neutral-400 bg-white/[0.02] border-white/10";
+  return "text-neutral-300 bg-white/[0.02] border-white/10";
 }
 
 const THINKING = [
@@ -129,7 +129,7 @@ export default function PMLens() {
           onChange={(e) => setInput(e.target.value)}
         />
         <div className="flex items-center justify-between mt-4">
-          <span className="text-xs text-neutral-400">Runs on Claude, with Valeria&apos;s PM approach</span>
+          <span className="text-xs text-neutral-300">Runs on Claude, with Valeria&apos;s PM approach</span>
           <button
             type="submit"
             disabled={loading || !input.trim()}
@@ -150,9 +150,9 @@ export default function PMLens() {
               initial={{ opacity: 0, x: -6 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.25 }}
-              className="text-xs text-neutral-400 flex items-center gap-2"
+              className="text-xs text-neutral-300 flex items-center gap-2"
             >
-              <span className={i === step ? "text-blue-300" : "text-neutral-400"}>{i === step ? "›" : "✓"}</span>
+              <span className={i === step ? "text-blue-300" : "text-neutral-300"}>{i === step ? "›" : "✓"}</span>
               {s}
             </motion.div>
           ))}
@@ -169,7 +169,7 @@ export default function PMLens() {
                 setInput(ex);
                 run(ex);
               }}
-              className="text-left text-xs text-neutral-400 hover:text-neutral-300 border border-white/10 hover:border-white/20 rounded-full px-3 py-1.5 transition-colors duration-200"
+              className="text-left text-xs text-neutral-300 hover:text-neutral-300 border border-white/10 hover:border-white/20 rounded-full px-3 py-1.5 transition-colors duration-200"
             >
               {ex}
             </button>
@@ -178,7 +178,7 @@ export default function PMLens() {
       )}
 
       {error && (
-        <p className="mt-6 text-sm text-neutral-400" style={{ fontFamily: "var(--font-geist-mono)" }}>
+        <p className="mt-6 text-sm text-neutral-300" style={{ fontFamily: "var(--font-geist-mono)" }}>
           &gt; {error}
         </p>
       )}
@@ -197,7 +197,7 @@ export default function PMLens() {
           <Field icon={Layers} label="Scope">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <p className="text-xs text-neutral-400 mb-1">In</p>
+                <p className="text-xs text-neutral-300 mb-1">In</p>
                 <ul className="flex flex-col gap-1.5">
                   {result.scope.in.map((s, i) => (
                     <li key={i} className="flex gap-2">
@@ -208,12 +208,12 @@ export default function PMLens() {
                 </ul>
               </div>
               <div>
-                <p className="text-xs text-neutral-400 mb-1">Out</p>
+                <p className="text-xs text-neutral-300 mb-1">Out</p>
                 <ul className="flex flex-col gap-1.5">
                   {result.scope.out.map((s, i) => (
                     <li key={i} className="flex gap-2">
-                      <span className="text-neutral-400 mt-px">·</span>
-                      <span className="text-neutral-400">{s}</span>
+                      <span className="text-neutral-300 mt-px">·</span>
+                      <span className="text-neutral-300">{s}</span>
                     </li>
                   ))}
                 </ul>
@@ -226,25 +226,25 @@ export default function PMLens() {
               <span className={`text-xs tracking-wide uppercase border rounded-full px-2.5 py-1 ${priorityStyle(result.priority.call)}`} style={{ fontFamily: "var(--font-geist-mono)" }}>
                 {result.priority.call}
               </span>
-              <span className="text-neutral-400">{result.priority.reasoning}</span>
+              <span className="text-neutral-300">{result.priority.reasoning}</span>
             </div>
           </Field>
           {result.assumption && (
             <Field icon={HelpCircle} label="Key assumption">
-              <span className="text-neutral-400 italic">{result.assumption}</span>
+              <span className="text-neutral-300 italic">{result.assumption}</span>
             </Field>
           )}
 
           <div className="flex flex-wrap items-center gap-5 mt-2 pt-5 border-t border-white/10">
             <button
               onClick={() => { setResult(null); setInput(""); }}
-              className="text-xs text-neutral-400 hover:text-white transition-colors duration-200"
+              className="text-xs text-neutral-300 hover:text-white transition-colors duration-200"
             >
               ← Try another
             </button>
             <button
               onClick={copyResult}
-              className="text-xs text-neutral-400 hover:text-white transition-colors duration-200"
+              className="text-xs text-neutral-300 hover:text-white transition-colors duration-200"
             >
               {copied ? "Copied ✓" : "Copy result"}
             </button>
