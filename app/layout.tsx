@@ -5,6 +5,8 @@ import LenisProvider from "@/components/LenisProvider";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import GridFlow from "@/components/GridFlow";
+import Grain from "@/components/Grain";
+import ScrollProgress from "@/components/ScrollProgress";
 import CommandPalette from "@/components/CommandPalette";
 import EasterEgg from "@/components/EasterEgg";
 import { Analytics } from "@vercel/analytics/next";
@@ -58,6 +60,8 @@ export default function RootLayout({
     >
       <body className="min-h-screen">
         <GridFlow />
+        <Grain />
+        <ScrollProgress />
         <Nav />
         <LenisProvider>
           <div className="relative z-10">

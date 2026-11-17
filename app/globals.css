@@ -20,6 +20,19 @@ html {
 
 body {
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Typographic refinement: balanced heading line-breaks, tighter optical
+   tracking on large serif display, nicer paragraph rag. */
+h1, h2, h3 {
+  text-wrap: balance;
+  letter-spacing: -0.015em;
+}
+p {
+  text-wrap: pretty;
 }
 
 /* Lenis smooth-scroll official setup */

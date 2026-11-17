@@ -17,12 +17,11 @@ const BETS: Bet[] = [
     status: "Scoping",
   },
   {
-    title: "Roadmap ↔ Jira sync",
+    title: "Meeting → Jira agent",
     blurb:
-      "Two-way sync for the roadmap tool I built: move a card on the timeline and it updates Jira, and the other way around — so planning and delivery never drift.",
-    stack: ["Jira API", "webhooks"],
-    status: "In progress",
-    href: "/tools/roadmap",
+      "An agent that listens to my meetings and turns the “we need to do X” moments into Jira tickets automatically — so action items stop dying in notes.",
+    stack: ["Claude", "transcription", "Jira API"],
+    status: "Scoping",
   },
 ];
 
