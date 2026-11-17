@@ -3,6 +3,7 @@ import { NextRequest } from "next/server";
 import { buildSystemPrompt, MODEL } from "@/lib/valeria-corpus";
 import { getPosts } from "@/lib/substack";
 import { retrieve } from "@/lib/retrieve";
+import { logQuestion } from "@/lib/observability";
 
 export const runtime = "nodejs";
 
@@ -42,6 +43,17 @@ export async function POST(req: NextRequest) {
         await ms.finalMessage();
 
         send({ type: "done" });
+
+        // Observability: record the question + whether her writing grounded it,
+        // so content gaps surface. Never blocks or breaks the reply.
+        if (typeof lastUser === "string" && lastUser.trim()) {
+          await logQuestion({
+            ts: Date.now(),
+            q: lastUser.slice(0, 280),
+            grounded: sources.length > 0,
+            sources: sources.map((s) => s.title),
+          });
+        }
       } catch (err) {
         console.error(err);
         send({ type: "error", text: "Something went wrong, please try again." });
