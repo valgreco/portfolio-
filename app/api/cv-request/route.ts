@@ -1,8 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
 
-// Where the "someone downloaded your CV" notification is sent.
-const NOTIFY_TO = "valeria.greco29@gmail.com";
-
 export async function POST(req: NextRequest) {
   try {
     const { name, email, company } = await req.json();
@@ -11,10 +8,13 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Missing fields" }, { status: 400 });
     }
 
+    // Where the "someone downloaded your CV" notification is sent (kept out of
+    // source so the public repo doesn't leak a personal address).
+    const NOTIFY_TO = process.env.CONTACT_EMAIL;
     const apiKey = process.env.RESEND_API_KEY;
-    if (!apiKey) {
+    if (!apiKey || !NOTIFY_TO) {
       // Structure is in place; email sending activates once the key is set.
-      console.warn("RESEND_API_KEY not set: skipping notification email.");
+      console.warn("RESEND_API_KEY or CONTACT_EMAIL not set: skipping notification email.");
       return NextResponse.json({ ok: true, notified: false });
     }
 

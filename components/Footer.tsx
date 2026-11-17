@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { track } from "@vercel/analytics";
 
 export default function Footer() {
@@ -38,7 +39,13 @@ export default function Footer() {
         </a>
       </div>
 
-      <p className="text-xs text-neutral-300 mt-12">© {new Date().getFullYear()} Valeria Greco</p>
+      <div className="flex items-center gap-4 mt-12 text-xs text-neutral-300">
+        <span>© {new Date().getFullYear()} Valeria Greco</span>
+        <span className="text-neutral-700">·</span>
+        <Link href="/colophon" className="hover:text-white transition-colors duration-200">
+          Built with Claude Code — how it&apos;s built
+        </Link>
+      </div>
     </footer>
   );
 }

@@ -89,7 +89,8 @@ export default function BookACall() {
     setLaunched(true);
     // let the plane take off, then open the mail client
     setTimeout(() => {
-      window.location.href = `mailto:valeria.greco29@gmail.com?subject=${subject}&body=${body}`;
+      const to = process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "";
+      window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
       setSent(true);
     }, 700);
   }
