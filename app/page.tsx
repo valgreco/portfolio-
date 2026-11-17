@@ -4,6 +4,7 @@ import { useState } from "react";
 import BootSequence from "@/components/BootSequence";
 import Hero from "@/components/Hero";
 import BuildingWithAI from "@/components/BuildingWithAI";
+import BuildingNow from "@/components/BuildingNow";
 import BeyondTheCV from "@/components/BeyondTheCV";
 import OffTheClock from "@/components/OffTheClock";
 import BookACall from "@/components/BookACall";
@@ -18,6 +19,7 @@ export default function Home() {
       <BootSequence onComplete={() => setHeroVisible(true)} />
       <Hero visible={heroVisible} />
       <Reveal><BuildingWithAI /></Reveal>
+      <Reveal><BuildingNow /></Reveal>
       <Reveal><BeyondTheCV /></Reveal>
       <Reveal><OffTheClock /></Reveal>
       <Reveal>
