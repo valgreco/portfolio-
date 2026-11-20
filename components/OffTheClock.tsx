@@ -13,8 +13,15 @@ export default function OffTheClock() {
 
       <div className="max-w-2xl flex flex-col gap-6 text-base leading-8 text-neutral-300">
         <p>
-          When I&apos;m not building, you&apos;ll usually find me at the gym or out in nature. Moving
-          and unplugging is how I reset, and it&apos;s often where my clearest thinking happens.
+          When I&apos;m not building, you&apos;ll usually find me lifting at the gym or up in the
+          mountains (always more mountains than sea). Moving and unplugging is how I reset &mdash; and,
+          honestly, where my clearest thinking tends to happen. Half the ideas I bring into work on
+          Monday started on a trail, not at a desk.
+        </p>
+        <p>
+          I&apos;m also the person who signs up for a random workshop just to make something with my
+          hands &mdash; ceramics, painting, candle-making. It&apos;s the same instinct that makes me
+          want to build at work: I&apos;d rather make the thing than just read about it.
         </p>
       </div>
     </section>
