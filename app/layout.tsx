@@ -9,7 +9,7 @@ import Grain from "@/components/Grain";
 import ScrollProgress from "@/components/ScrollProgress";
 import CommandPalette from "@/components/CommandPalette";
 import EasterEgg from "@/components/EasterEgg";
-import { Analytics } from "@vercel/analytics/next";
+import AnalyticsOptOut from "@/components/AnalyticsOptOut";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -71,7 +71,7 @@ export default function RootLayout({
         </LenisProvider>
         <CommandPalette />
         <EasterEgg />
-        <Analytics />
+        <AnalyticsOptOut />
       </body>
     </html>
   );
